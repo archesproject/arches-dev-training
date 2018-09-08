@@ -1,0 +1,26 @@
+{
+	"name": "arches-dev-training",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"start": "bs serve",
+		"build": "bs export -o docs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/archesproject/arches-dev-training.git"
+	},
+	"dependencies": {
+		"backslide": "~2.3.1"
+	},
+	"author": "",
+	"license": "GNU-AAPL3",
+	"bugs": {
+		"url": "https://github.com/archesproject/arches-dev-training/issues"
+	},
+	"homepage": "https://github.com/archesproject/arches-dev-training#readme"
+}
