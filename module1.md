@@ -11,7 +11,7 @@ layout: true
 
 class: impact
 
-# {{title}}, Day 2
+# {{title}}
 ## Fall 2018
 
 ---
