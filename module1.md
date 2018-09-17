@@ -4,7 +4,7 @@ layout: true
 
 <!-- This slide will serve as the base layout for all your slides -->
 .bottom-bar[
-  {{title}}
+ ![](images/arches_logo.png){{title}}
 ]
 
 ---
@@ -13,14 +13,15 @@ class: impact
 
 # {{title}}
 ## Fall 2018
-
 ---
 
 class: impact
 
 # Day 1 Review
-
 ---
 
-## What did we learn?
+# What did we learn?
+
+    - Arches stuff
+    - Geospatial web application developer, Farallon Geographics (10 years)
 <!-- [module 2 slides](module-2.html) -->
