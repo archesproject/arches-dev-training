@@ -15,7 +15,7 @@
 		"url": "git+https://github.com/archesproject/arches-dev-training.git"
 	},
 	"dependencies": {
-		"backslide": "~2.3.1"
+		"backslide": "2.1.0"
 	},
 	"author": "",
 	"license": "GNU-AAPL3",
