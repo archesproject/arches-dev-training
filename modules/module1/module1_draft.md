@@ -93,6 +93,6 @@ Data processing operations triggered by a get, save, delete or index event.
 **Packages**
 
 Organization of files used to implement an Arches application
-    - Business data
-    - Resource models and branches
-    - Custom cards, datatypes, widgets, report templates
+- Business data
+- Resource models and branches
+- Custom cards, datatypes, widgets, report templates
