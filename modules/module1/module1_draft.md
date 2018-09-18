@@ -4,15 +4,35 @@
 
 **Lesson Overview**
 
-Arches design goals, core technologies, system architecture, and coding conventions.
-Organization of Arches code base, Git repository and submitting pull requests.
-Developer code of conduct.
+Arches Application Overview
+- Design goals
+- Core technologies and system architecture
+- Managing dependencies
 
-Introduction to graphs, datatypes, widgets, tiles, card components, report templates,
-packages. Overview/summary of how Arches implements data models, modular design
-of data types, relationship between data types and widgets. Role and use of card
-components in Arches data editor UI. Implementing custom logic via functions. Using
-packages to create Arches applications
+Contributing to Arches
+- Getting more information
+- Submitting tickets/Zenhub
+- Writing documentation
+- Code conventions
+- Submitting pull requests
+- Developer Code of Conduct
+
+Major Arches Concepts
+- graphs
+- datatypes
+- widgets
+- tiles
+- cards
+- report templates
+- functions
+- packages
+
+Extending Arches for your application
+- Datatypes
+- Widgets
+- Functions
+- Cards
+- Package development
 
 ---
 
@@ -30,6 +50,11 @@ packages to create Arches applications
 - TileStache: Caches vector and raster tiles
 - Knockout.js: UI framework
 
+
+**Managing dependencies**
+- Node/Yarn
+- Require.js
+
 ---
 
 **Contributing to Arches**
@@ -42,6 +67,11 @@ packages to create Arches applications
     - PEP 8
     - ESlint: 'recommended'
 
+- Writing documentation:
+    - Documentation is in a dedicated repo
+    - Written in restructured text
+    - Converted to HTML using Sphinx
+
 - Submitting pull requests:
 
 - Developer Code of Conduct
@@ -51,8 +81,19 @@ packages to create Arches applications
 **Graphs**
 
 - Resource Models
+    - The blueprint of a resource instance
+    - Conceptually similar to a class in an object-oriented programming language
+    - Composed of a root node and one or more branches
 - Branches
+    - Building blocks of a resource model
+    - Generally composed of nodes of a particular theme
+    - Nodes on a branch that share the same parent comprise a Nodegroup
 - Nodes
+    - The smallest unit of a resource model
+    - Semantic or data collecting
+- Edges
+    - Relationships between nodes.
+    - In some cases has a relationship with its parent defined
 
 ---
 
@@ -72,8 +113,8 @@ Define how data is managed for a node
 
 **UI Representation**
 
-- Widgets - Nodes
-- Cards - Nodegroups
+- Widgets - UI representation of **nodes**
+- Cards - UI representation of **nodegroups**
 
 ---
 
@@ -89,6 +130,12 @@ Organize how nodes are represented in the UI
 **Functions**
 
 Data processing operations triggered by a get, save, delete or index event.
+
+---
+
+**Code organization**
+
+
 
 **Packages**
 

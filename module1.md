@@ -22,6 +22,6 @@ class: impact
 
 # What did we learn?
 
-    - Arches stuff
+    - Arches overview
     - Geospatial web application developer, Farallon Geographics (10 years)
 <!-- [module 2 slides](module-2.html) -->
