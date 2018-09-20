@@ -119,12 +119,26 @@ Define how data is managed for a node
 - Domain
 - GeoJson
 
+Example operations:
+    - Validation
+    - Transforming data when indexed in Elasticsearch
+    - Transforming data on import and export
+    - Defines search filters for its type
+
 ---
 
 **UI Representation**
 
-- Widgets - UI representation of **nodes**
-- Cards - UI representation of **nodegroups**
+- Cards - UI representation of a **nodegroups**
+- Widgets - UI representation of a **node** based on datatype
+- A datatype can be represented by different widgets
+
+| datatype | widgets |
+|:--------:|:-------:|
+| boolean  | radio, switch, select |
+| string   | input, rich text editor |
+| domain   | radio, select |
+| concept  | radio, select |
 
 ---
 
@@ -139,13 +153,17 @@ Organize how nodes are represented in the UI
 
 **Functions**
 
-Data processing operations triggered by a get, save, delete or index event.
+Data processing operations triggered when Arches retrieves, saves, or deletes a nodegroup.
 
 ---
 
 **Code organization**
 
+If you're comfortable with Django, Arches will look very familiar
 
+Django template file paths and names generally match their javascript couterparts:
+    - arches/app/templates/views/components/widgets/number.htm
+    - arches/app/media/js/views/components/widgets/number.js
 
 **Packages**
 
