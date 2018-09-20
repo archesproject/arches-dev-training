@@ -59,7 +59,7 @@ function ViewModel() {
 ko.applyBindings(new ViewModel());
 ```
 
-demo(demosite/demo1.html)
+[demo](demosite/demo1.html)
 
 ---
 
