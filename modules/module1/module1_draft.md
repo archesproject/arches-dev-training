@@ -7,38 +7,47 @@
 Arches Application Overview
 - Design goals
 - Core technologies and system architecture
-- Managing dependencies
 
 Contributing to Arches
-- Getting more information
-- Submitting tickets/Zenhub
+- Submitting tickets/zenhub
 - Writing documentation
-- Code conventions
-- Submitting pull requests
+- Code conventions and submitting pull requests
 - Developer Code of Conduct
+- Where to get more help
 
 Major Arches Concepts
-- graphs
-- datatypes
-- widgets
-- tiles
-- cards
-- report templates
-- functions
-- packages
+- Graphs, datatypes, cards, tiles ...
 
 Extending Arches for your application
-- Datatypes
-- Widgets
-- Functions
-- Cards
-- Package development
+- Building custom components (datatypes, widgets, cards, reports)
+- Putting it all together: Package development
+
+---
+
+***Lesson Goals***
+
+To understand the basic architecture of Arches
+To be familiar with Arches concepts and nomenclature
+To understand how developers contribute to Arches
+To be aware of the ways in which you can extend Arches
+To understand how Arches applications and packages are related
+To know where to find more help
 
 ---
 
 **Design Goals**
 
-- Graph data structure
+- Open Source
+- Multi-language
+- Standards based
+    * CRM - Conceptual Reference Model (http://www.cidoc-crm.org/)
+- Graph Data Structure
+    * Supports concept management
+    * Allows for a dynamic logical data model (graph) with a static physical model (db schema)
+    * PostgreSQL(relational + JSON) ideal for its spatial capabilities
+- Interoperable: Data could be used in other systems
+
+These qualities make Arches highly adaptable to different use cases and geographic contexts
 
 ---
 
@@ -104,17 +113,32 @@ Define how data is managed for a node
 - String
 - Number
 - Boolean
-- Datetime
+- Date
+- EDTF
 - Concept
 - Domain
 - GeoJson
+
+Example operations:
+    - Validation
+    - Transforming data when indexed in Elasticsearch
+    - Transforming data on import and export
+    - Defines search filters for its type
 
 ---
 
 **UI Representation**
 
-- Widgets - UI representation of **nodes**
-- Cards - UI representation of **nodegroups**
+- Cards - UI representation of a **nodegroups**
+- Widgets - UI representation of a **node** based on datatype
+- A datatype can be represented by different widgets
+
+| datatype | widgets |
+|:--------:|:-------:|
+| boolean  | radio, switch, select |
+| string   | input, rich text editor |
+| domain   | radio, select |
+| concept  | radio, select |
 
 ---
 
@@ -129,13 +153,17 @@ Organize how nodes are represented in the UI
 
 **Functions**
 
-Data processing operations triggered by a get, save, delete or index event.
+Data processing operations triggered when Arches retrieves, saves, or deletes a nodegroup.
 
 ---
 
 **Code organization**
 
+If you're comfortable with Django, Arches will look very familiar
 
+Django template file paths and names generally match their javascript couterparts:
+    - arches/app/templates/views/components/widgets/number.htm
+    - arches/app/media/js/views/components/widgets/number.js
 
 **Packages**
 
