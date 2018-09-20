@@ -15,13 +15,33 @@ class: impact
 ## Fall 2018
 ---
 
-class: impact
+**Lesson Overview**
 
-# Day 1 Review
+Arches Application Overview
+- Design goals
+- Core technologies and system architecture
+
+Contributing to Arches
+- Submitting tickets/zenhub
+- Writing documentation
+- Code conventions and submitting pull requests
+- Developer Code of Conduct
+- Where to get more help
+
+Major Arches Concepts
+- Graphs, datatypes, cards, tiles ...
+
+Extending Arches for your application
+- Building custom components (datatypes, widgets, cards, reports)
+- Putting it all together: Package development
+
 ---
 
-# What did we learn?
+***Lesson Goals***
 
-    - Arches overview
-    - Geospatial web application developer, Farallon Geographics (10 years)
-<!-- [module 2 slides](module-2.html) -->
+- To understand the basic architecture of Arches
+- To be familiar with Arches concepts and nomenclature
+- To understand how developers contribute to Arches
+- To be aware of the ways in which you can extend Arches
+- To understand how Arches applications and packages are related
+- To know where to find more help

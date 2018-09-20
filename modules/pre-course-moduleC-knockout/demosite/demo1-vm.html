@@ -1,0 +1,25 @@
+<html>
+    <style>
+    .green-background {
+        background-color: #ddffdd;
+    }
+    </style>
+    <body>
+        <p data-bind="text: artist"></p>
+        <p data-bind="text: album, css: style"></p>
+        <label>Album: <input data-bind="textInput: album"></input></label>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script>
+
+            function ViewModel() {
+                this.artist = "David Bowie";
+                this.style = 'green-background'
+                this.album = ko.observable();
+            };
+
+            ko.applyBindings(new ViewModel());
+
+        </script>
+    </body>
+</html>
