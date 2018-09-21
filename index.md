@@ -20,4 +20,4 @@ class: impact
 # Module 1
 ## The Arches Platform and Core Technical Concepts
 
-[Module 1](module1.html)
+[Knockout Precourse](precourse-knockout.html)

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+        .padding {
+            padding: 5px;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            height: 70px;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .green-background {
+            background-color: #bbFFbb;
+        }
+        </style>
+    <head>
+    <body>
+        <div class=form>
+        <label>Artist:  <input data-bind="textInput: artist"></input></label>
+        <label>Album:  <input data-bind="textInput: album"></input></label>
+        <!-- 1 --><button data-bind="click: addAlbum">Add</button>
+        </div>
+        <div class=padding data-bind="html: summary"></div>
+        <p class=green-background data-bind="text: recentchange"></p>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+        <script>
+
+            function ViewModel() {
+                var self = this;
+                this.artist = ko.observable("");
+                this.album = ko.observable("");
+                this.recentchange = ko.observable();
+                this.albums = ko.observableArray([]);
+
+                //1. Called using the click binding
+                this.addAlbum = function(){
+                    this.albums.push({
+                        artist: this.artist(),
+                        album: this.album()
+                    })
+                    this.artist("");
+                    this.album("");
+                };
+
+                //2. Called when a new record is appended to the array of albums
+                //   returns nothing, but updates the recentchange observable
+                this.albums.subscribe(function(albums){
+                    var currentItem = _.last(albums)
+                    self.recentchange("You just added " + currentItem.artist + ", " + currentItem.album);
+                })
+
+                //3. Also called when albums is updated but retunns a new derived value
+                this.summary = ko.computed(function(){
+                    var res = "<ul>"
+                    _.map(self.albums(), function(album){res += "<li>Artist: " + album.artist + ",   Album: " + album.album + "</li>"});
+                    res += "</ul>"
+                    return res
+                });
+
+            };
+
+            ko.applyBindings(new ViewModel());
+
+        </script>
+    </body>
+</html>

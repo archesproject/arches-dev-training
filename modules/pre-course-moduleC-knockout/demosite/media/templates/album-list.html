@@ -1,0 +1,38 @@
+<style>
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    min-width: 200px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+}
+
+.row.even {
+    background-color: #ccc;
+}
+
+</style>
+
+<div style="padding: 10px; border: solid 1px #ddd">
+
+<span data-bind="text: title"></span>
+<div class="row" data-bind="visible: albums().length > 0">
+    <div>#</div>
+    <div>Artist</div>
+    <div>Album</div>
+    <div>Remove</div>
+</div>
+
+<!--ko foreach: albums, as: album -->
+<span class="row" data-bind="css: {even: ($index() + 1) % 2 === 0}">
+    <div data-bind="text: $index() + 1"></div>
+    <div class="padding" data-bind="text:artist + ', '"></div>
+    <div class="padding" data-bind="text:album"></div>
+    <button data-bind="click: $parent.removeAlbum">Remove</button>
+</span>
+<!-- /ko -->
+</div>

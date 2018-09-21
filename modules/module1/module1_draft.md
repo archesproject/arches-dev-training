@@ -153,7 +153,9 @@ Organize how nodes are represented in the UI
 
 **Functions**
 
-Data processing operations triggered when Arches retrieves, saves, or deletes a nodegroup.
+Custom data processing operations triggered when Arches retrieves, saves, or deletes data belonging to a specified nodegroup.
+
+Conceptually similar to a database trigger
 
 ---
 

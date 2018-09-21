@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+        .padding {
+            padding: 5px;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            height: 70px;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .green-background {
+            background-color: #bbFFbb;
+        }
+        </style>
+    <head>
+    <body>
+        <div class=form>
+        <label>Artist:  <input data-bind="textInput: artist"></input></label>
+        <label>Album:  <input data-bind="textInput: album"></input></label>
+        <!-- 1 --><button data-bind="click: addAlbum">Add</button>
+        </div>
+
+        <script data-main="init-simple.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+        <div data-bind='component: {
+            name: "album-list-simple",
+            params: {albumlist: albums}
+        }'></div>
+
+    </body>
+</html>

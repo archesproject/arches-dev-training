@@ -1,0 +1,30 @@
+<html>
+    <style>
+    .output {
+        background-color: #ddffdd;
+        width: 150px;
+        margin: 25px;
+    }
+    </style>
+    <body>
+        <label>Artist: <input data-bind="textInput: artist"></input></label>
+        <label>Album: <input data-bind="textInput: album"></input></label>
+        <div data-bind="css: style">
+            <div data-bind="text: artist"></div>
+            <div data-bind="text: album"></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script>
+
+            function ViewModel() {
+                this.artist = ko.observable();
+                this.album = ko.observable();
+                this.style = 'output'
+            };
+
+            ko.applyBindings(new ViewModel());
+
+        </script>
+    </body>
+</html>
