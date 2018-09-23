@@ -1,5 +1,5 @@
 <style>
-.row {
+tr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,7 +11,11 @@
     border-color: #ccc;
 }
 
-.row.even {
+td {
+    padding: 0 10;
+}
+
+tr.even {
     background-color: #ccc;
 }
 
@@ -19,20 +23,26 @@
 
 <div style="padding: 10px; border: solid 1px #ddd">
 
-<span data-bind="text: title"></span>
-<div class="row" data-bind="visible: albums().length > 0">
-    <div>#</div>
-    <div>Artist</div>
-    <div>Album</div>
-    <div>Remove</div>
-</div>
+    <span data-bind="text: title"></span>
 
-<!--ko foreach: albums, as: album -->
-<span class="row" data-bind="css: {even: ($index() + 1) % 2 === 0}">
-    <div data-bind="text: $index() + 1"></div>
-    <div class="padding" data-bind="text:artist + ', '"></div>
-    <div class="padding" data-bind="text:album"></div>
-    <button data-bind="click: $parent.removeAlbum">Remove</button>
-</span>
-<!-- /ko -->
+    <table data-bind="visible: albums().length > 0">
+    <tr>
+        <th>#</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Remove</th>
+    </tr>
+    <!--ko foreach: albums, as: album -->
+        <tr data-bind="css: {'even': ($index() + 1) % 2 === 0}">
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text:artist"></td>
+            <td data-bind="text:album"></td>
+            <td><button data-bind="click: $parent.removeAlbum">Remove</button></td>
+        </tr>
+    <!-- /ko -->
+    </table>
+
+    <!--ko if: context -->
+        <div style="padding-top: 10px" data-bind="text: 'Album count: ' + albums().length"></div>
+    <!-- /ko -->
 </div>
