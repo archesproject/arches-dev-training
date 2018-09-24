@@ -126,6 +126,45 @@ this.summary = ko.computed(function(){
 
 ---
 
+**Control logic**
+
+- Inline and Virtual:
+```html
+<div data-bind="if: someBooleanValue">Here is a message. Astonishing.</div>
+
+<ul>
+    <li>This item always appears</li>
+    <!-- ko ifnot: someBooleanValue -->
+        <li>display this line</li>
+    <!-- /ko -->
+</ul>
+
+```
+
+---
+***Control Logic - cont.***
+- foreach binding & scope
+
+```javascript
+var geomViewModel = function() {
+    var self = this;
+    self.coords = [{x:37.5,y:-122.1},{x:37.6}, y:-122.0, ...];
+    self.name = "San Francisco";
+}
+```
+
+```html
+<table data-bind="with: geomViewModel">
+    <tbody data-bind="foreach: coords">
+        <span data-bind="text: $parent.name"></span>
+        <span data-bind="text: x"> </span>,
+        <span data-bind="text: y"> </span>
+    <tbody>
+</table>
+```
+
+---
+
 ***Components***
 
 - Composed of template and view model
@@ -154,7 +193,7 @@ ko.components.register('album-list', {
 
 **Using multiple components**
 
-Representing the same data differently:
+Different components can be used to represent the same data differently:
 ```html
 <div data-bind='component: {
     name: "album-list-simple",
@@ -169,11 +208,21 @@ Representing the same data differently:
 
 [demo](demosite/demo4-components.html)
 
----
+***Reusing Components***
 
-**Control logic**
+Components can be reused within an application with different configurations:
+```html
+<div data-bind='component: {
+    name: "album-list",
+    params: {title: "Component", albumlist: albums}
+}'></div>
 
-- Virtual and Inline
-- foreach binding
-- if binding
-- ifnot binding
+<div data-bind='component: {
+    name: "album-list",
+    params: {title: "Same component", albumlist: albums, context: "agg"}
+}'></div>
+
+<!--ko if: context -->
+    <div style="padding-top: 10px" data-bind="text: 'Album count: ' + albums().length"></div>
+<!-- /ko -->
+```
