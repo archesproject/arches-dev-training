@@ -22,5 +22,8 @@
 	"bugs": {
 		"url": "https://github.com/archesproject/arches-dev-training/issues"
 	},
-	"homepage": "https://github.com/archesproject/arches-dev-training#readme"
+	"homepage": "https://github.com/archesproject/arches-dev-training#readme",
+	"devDependencies": {
+		"fusuma": "^0.9.3"
+	}
 }

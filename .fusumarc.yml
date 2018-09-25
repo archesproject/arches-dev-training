@@ -1,0 +1,15 @@
+meta:
+  url:
+  name:
+  author:
+  thumbnail:
+  description:
+  sns:
+    - twitter
+slide:
+  sidebar: true
+  theme: nebula
+  targetBlank: true
+extends:
+  js:
+  css: style.css
