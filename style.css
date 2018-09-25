@@ -10,6 +10,25 @@
     align-items: center;
 } */
 
+
+.footer {
+    background-color: #aaa;
+    position: fixed;
+    bottom: 0px;
+    height: 32px;
+    width: 100%;
+}
+
+.logo {
+    content:url(images/arches_logo.png);
+    height: 21px;
+    width: 75px;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+}
+
+
 .bespoke-backdrop {
   background: var(--color-gray);
 }
