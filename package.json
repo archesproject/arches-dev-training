@@ -7,13 +7,15 @@
 		"doc": "docs"
 	},
 	"scripts": {
+		"serve": "npx fusuma start",
+		"build": "npx fusuma build",
+		"deploy": "npx fusuma deploy"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/archesproject/arches-dev-training.git"
 	},
-	"dependencies": {
-	},
+	"dependencies": {},
 	"author": "",
 	"license": "GNU-AAPL3",
 	"bugs": {
@@ -21,6 +23,7 @@
 	},
 	"homepage": "https://github.com/archesproject/arches-dev-training#readme",
 	"devDependencies": {
-		"fusuma": "^0.9.3"
+		"fusuma": "^0.9.3",
+		"npx": "^10.2.0"
 	}
 }
