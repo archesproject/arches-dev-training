@@ -8,7 +8,7 @@ meta:
     - twitter
 slide:
   sidebar: true
-  theme: nebula
+  theme: bespoke-theme-sea
   targetBlank: true
 extends:
   js:

@@ -1266,6 +1266,10 @@ bespoke-theme-nebula@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/bespoke-theme-nebula/-/bespoke-theme-nebula-1.0.1.tgz#576ffea516b60db6829f2092fadeda664f72e483"
 
+bespoke-theme-sea@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/bespoke-theme-sea/-/bespoke-theme-sea-0.3.2.tgz#182aa1340b9dc05b98e6a6dd2f979e18f00fc70b"
+
 bespoke-theme-voltaire@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/bespoke-theme-voltaire/-/bespoke-theme-voltaire-1.0.1.tgz#8cd32721b49ba86d25cac62cc6dd8c5b7ed07146"
@@ -3349,9 +3353,9 @@ function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
-fusuma@^0.9.3:
+"fusuma@https://github.com/archesproject/fusuma.git":
   version "0.9.3"
-  resolved "https://registry.yarnpkg.com/fusuma/-/fusuma-0.9.3.tgz#49413a08db231824c1a11b49b8c6be04f278a65e"
+  resolved "https://github.com/archesproject/fusuma.git#ad7c1cc74cbca3bc0ca863424eae1f9389fb5dcc"
   dependencies:
     "@about_hiroppy/bespoke-fx" "0.0.5"
     babel-core "^6.26.0"

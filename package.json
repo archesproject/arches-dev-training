@@ -15,7 +15,9 @@
 		"type": "git",
 		"url": "git+https://github.com/archesproject/arches-dev-training.git"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"bespoke-theme-sea": "^0.3.2"
+	},
 	"author": "",
 	"license": "GNU-AAPL3",
 	"bugs": {
@@ -23,6 +25,6 @@
 	},
 	"homepage": "https://github.com/archesproject/arches-dev-training#readme",
 	"devDependencies": {
-		"fusuma": "^0.9.3"
+		"fusuma": "https://github.com/archesproject/fusuma.git"
 	}
 }
