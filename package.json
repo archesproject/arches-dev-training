@@ -7,9 +7,9 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"serve": "npx fusuma start",
-		"build": "npx fusuma build",
-		"deploy": "npx fusuma deploy"
+		"serve": "fusuma start",
+		"build": "fusuma build",
+		"deploy": "fusuma deploy"
 	},
 	"repository": {
 		"type": "git",
@@ -23,7 +23,6 @@
 	},
 	"homepage": "https://github.com/archesproject/arches-dev-training#readme",
 	"devDependencies": {
-		"fusuma": "^0.9.3",
-		"npx": "^10.2.0"
+		"fusuma": "^0.9.3"
 	}
 }
