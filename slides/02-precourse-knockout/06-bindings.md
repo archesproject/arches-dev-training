@@ -8,4 +8,4 @@
 - attr
 - click
 - event
-- custom binding handlers
+- custom binding handlers (if time, more on these later)
