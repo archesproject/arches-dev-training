@@ -27,3 +27,32 @@
     bottom: 5px;
     right: 10px;
 }
+
+p {
+    padding: 0px 10px;
+    margin: 5px;
+}
+
+ul p {
+    padding: 0px
+}
+
+pre[class*="language-"] {
+    padding: 1.5em;
+    margin: 0.5em 0;
+    overflow: visible;
+}
+
+th {
+    text-decoration-line: underline;
+    padding-right: 12px;
+}
+
+td {
+    padding-right: 12px;
+}
+
+pre {
+    padding: 5px;
+    color: black;
+}
