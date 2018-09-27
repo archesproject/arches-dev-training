@@ -11,8 +11,8 @@ Defines how data is managed for a node
 - Domain
 - GeoJson
 
-Example operations:
-    - Validation
-    - Transforming data when indexed in Elasticsearch
-    - Transforming data on import and export
-    - Defines search filters for its type
+***Example operations***
+- Validation
+- Transforming data when indexed in Elasticsearch
+- Transforming data on import and export
+- Defines search filters for its type
