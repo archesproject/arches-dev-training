@@ -4,7 +4,7 @@
 ```javascript
 var geomViewModel = function() {
     var self = this;
-    self.coords = [{x:37.5,y:-122.1},{x:37.6}, y:-122.0, ...];
+    self.coords = [{x:37.5,y:-122.1}, {x:37.6, y:-122.0}];
     self.name = "San Francisco";
 }
 ```

@@ -1,7 +1,7 @@
 **Bindings**
 
 - text
-- inputText
+- textInput
 - visible
 - css
 - style
