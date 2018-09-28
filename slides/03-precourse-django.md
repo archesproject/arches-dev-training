@@ -10,13 +10,14 @@
 
 In this lesson we will briefly discuss each of the following Django concepts with examples and an explanation of how they are used in Arches
 
-- Projects and Apps
-- Settings
-- Management Commands
 - Models/Proxy Models
 - Views
-- Templates
 - Routing
+- Templates
+- Projects
+- Settings
+- Apps
+- Management Commands
 
 ---
 
@@ -30,9 +31,9 @@ be worth the time to do it.
 
 ---
 
-**What is Django?**
+## What is Django?
 
-## The web framework for perfectionists with deadlines
+#### The web framework for perfectionists with deadlines
 
 - Full-featured Python server-side web framework.
 - Well documented
@@ -50,8 +51,22 @@ be worth the time to do it.
 
 ---
 
+## VirtualEnv
+
+Typically Django projects are typically run in a virtual environment
+
+```bash
+$ pip install virtualenv
+$ virtualenv env
+$ source env/bin/activate
+$(env) pip install django
+```
+
+---
+
 ## Models
-### Django's object representation of your database schema
+(models.py)
+#### Django's object representation of your database schema
 
 ```python
 class DDataType(models.Model):
@@ -68,7 +83,31 @@ class DDataType(models.Model):
 
 ---
 
-### Views
+## Migrations
+
+As your app is developed, models will change. For example you might:
+
+- Add a field
+- Remove a field
+- Add a constraint
+- Rename a field
+- etc
+
+You can update your database with these changes
+by running migrations:
+
+```bash
+$ python manage.py makemigrations #create a migration file
+```
+
+```bash
+$ python manage.py migrate #run the migration file
+```  
+
+---
+
+## Views
+(views.py)
 
 Send data from a model to a template:
 
@@ -94,13 +133,8 @@ class ResourceData(View):
 
 ---
 
-##Templates
-
-Uses data from a view to render a web page.
-
----
-
-## Urls
+## Routing
+(urls.py)
 
 ```python
 uuid_regex = settings.UUID_REGEX
@@ -112,34 +146,33 @@ urlpatterns = [
         ),
 ]
 ```
-
 http://localhost:8081/graph_designer/ccbd1537-ac5e-11e6-84a5-026d961c88e6
 
----
-
-## VirtualEnv
-
-Typically Django projects are run in a virtual environment.  
+The name argument allows referencing the url from within templates
 
 ---
 
-## Settings
+## Templates
 
-settings.py
+Uses data from a view to render a web page.
 
-Application configuration:
-    ```python
-    DEBUG = True
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-    LANGUAGE_CODE = 'en-us'
-    TIME_ZONE = 'UTC'
-    ```
+```html
+<ul>
+{% for datatype in datatypes %}
+    <li>{{datatype.datatype}}</li>
+{% endfor %}
+</ul>
+```
+```
+<ul>
+    <li>file-list</li>
+    <li>string</li>
+    <li>number</li>
+    ... and so on
+</ul>
+```
 ---
+
 ## Django Projects
 
 ```
@@ -156,23 +189,74 @@ BTW, Arches is a Django Project
 
 ---
 
+## Settings
+
+(settings.py)
+
+Application configuration:
+    ```python
+    DEBUG = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+    LANGUAGE_CODE = 'en-us'
+    TIME_ZONE = 'UTC'
+    ```
+
+---
+
+## Admin and Management Commands
+
+```bash
+$ django-admin startproject mysite
+$ archesproject create myproject
+```
+
+```bash
+$ python manage.py createsuperuser
+$ python manage.py startapp mynewapp
+$ python manage.py runserver
+```
+
+You can easily add custom management commands
+
+```bash
+$ python manage.py packages -o load_package
+$ python manage.py es index_database
+```
+
+---
+
 ## Django Apps
 
 A project's functionality can be divided by subject into `Apps`
+This is where are models and views go:
 
-The Admin page is a good example of a Django app.
-
-### Important for Django, but not so important to understand Arches
-### Here's a simple example:
-
+```
 app/
     __init__.py
-    admin.py
-    apps.py
-    migrations/
+    admin.py #registers app with admin page
+    apps.py  #app configuration file
+    migrations/  #migration files
         __init__.py
     models.py
     tests.py
     views.py
+```
 
-## Arches also contains, but it's complex.
+The Admin page is a good example of a Django app.
+
+---
+
+## Piecing it together
+
+1. Create a project
+2. Modify your settings (particularly db settings)
+3. Create a super user
+4. Create an app
+5. Register your app in settings
+6. Write your models -> migrate
+7. Write your templates, views, and urls (and tests)
