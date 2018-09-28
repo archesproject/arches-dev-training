@@ -1,3 +1,5 @@
 .tmp
 node_modules
 docs/
+dist
+yarn-error.log

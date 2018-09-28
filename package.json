@@ -7,16 +7,15 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"start": "bs serve",
-		"build": "bs export -o docs"
+		"serve": "fusuma start",
+		"build": "fusuma build",
+		"deploy": "fusuma deploy"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/archesproject/arches-dev-training.git"
 	},
-	"dependencies": {
-		"backslide": "2.1.0"
-	},
+	"dependencies": {},
 	"author": "",
 	"license": "GNU-AAPL3",
 	"bugs": {
@@ -24,6 +23,7 @@
 	},
 	"homepage": "https://github.com/archesproject/arches-dev-training#readme",
 	"devDependencies": {
-		"fusuma": "^0.9.3"
+		"bespoke-theme-sea": "^0.3.2",
+		"fusuma": "https://github.com/archesproject/fusuma.git"
 	}
 }

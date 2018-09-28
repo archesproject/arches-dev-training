@@ -10,69 +10,71 @@
     align-items: center;
 } */
 
-.bespoke-backdrop {
-  background: var(--color-gray);
+
+.footer {
+    background-color: #aaa;
+    position: fixed;
+    bottom: 0px;
+    height: 32px;
+    width: 100%;
 }
 
-.big {
-  font-size: 3rem;
+.logo {
+    content:url(images/arches_logo.png);
+    height: 21px;
+    width: 75px;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
 }
 
-/* .tc39 {
-  @mixin icon './images/tc39.png';
-} */
-
-.timeline {
-  border-left: 2px solid #888;
-  padding: 10px;
-  text-align: left;
-
-  & thead {
-    border-bottom: 1px solid #888;
-  }
-
-  & th {
-    padding: 5px 20px;
-  }
+p {
+    padding: 0px 10px;
+    margin: 5px;
 }
 
-.stages-list {
-  font-size: 0.9rem;
-  text-align: left;
+ul p {
+    padding: 0px
+}
 
-  & th {
+li {
+    padding: 3px 0;
+}
+
+pre[class*="language-"] {
+    padding: 1.5em;
+    margin: 0.5em 0;
+    overflow: visible;
+}
+
+th {
+    text-decoration-line: underline;
+    padding-right: 12px;
+}
+
+td {
+    padding-right: 12px;
+}
+
+pre {
+    padding: 5px;
+    color: black;
+}
+
+.db-results {
+    font-size: 0.3em;
+    background: white;
+    color: black;
+    font-family: 'Source Code Pro', monospace !important;
+    border-radius: 5px;
     padding: 10px;
-
-    &:first-child {
-      padding-left: 50px;
-      width: 100px;
-    }
-  }
-
-  & strong {
-    font-size: 1.7rem;
-  }
+    margin: 5px;
 }
 
-.champion {
-  font-size: 0.6rem;
+pre {
+    font-size: 0.55em;
 }
 
-.proposal-updates-table {
-  font-size: 0.8rem;
-
-  & tbody {
-    & th {
-      padding: 2px 10px;
-    }
-  }
-}
-
-.node-fest {
-  width: 70%;
-}
-
-.required {
-  /* color: var(--color-js); */
-  margin-right: 5px;
+h3 {
+    margin: 5px 0;
 }
