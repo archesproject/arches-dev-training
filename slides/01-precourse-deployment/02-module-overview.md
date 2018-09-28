@@ -7,7 +7,6 @@ research and exploration.
 #### Topics: 
 -   Deployment Considerations
 -   Platform Options
--   Platform Specific details
 -   High Usage optimization options
 -   Hosted Examples
 -   Takeaway
