@@ -13,7 +13,7 @@ In this lesson we will briefly discuss each of the following Knockout concepts w
 
 - ViewModels
 - Data binding
-- Computeds/subscriptions
+- Computeds & subscriptions
 - Control flow
 - Scope
 - Components
@@ -22,16 +22,18 @@ In this lesson we will briefly discuss each of the following Knockout concepts w
 
 ## Lesson Goals
 
-To have a basic understanding of KnockoutJS and how the framework is applied in Arches
+To gain a basic understanding of what KnockoutJS is and how the framework is used in Arches
 
 ---
 
 ## What is Knockout?
-- Relatively lightweight library
+- JavaScript library for building web applications
+- [Documentation can be found here](https://knockoutjs.com/documentation/introduction.html)
+- [There are also some good tutorials](http://learn.knockoutjs.com/)
 - Easy to learn
 - Non-prescriptive regarding application architecture
 - Simple to extend with custom bindings
-- Allows users to work on isolated parts of the UI with  'components'  
+- Allows users to work on isolated parts of the UI with "components"
 
 ---
 
@@ -40,7 +42,6 @@ To have a basic understanding of KnockoutJS and how the framework is applied in 
 ```css
 .output {
     background-color: #ddffdd;
-    width: 150px;
     margin: 25px;
 }
 ```
@@ -48,7 +49,7 @@ To have a basic understanding of KnockoutJS and how the framework is applied in 
 ```html
 <label>Artist: <input data-bind="textInput: artist"></input></label>
 <label>Album: <input data-bind="textInput: album"></input></label>
-<div data-bind="css: style">
+<div class="output">
     <div data-bind="text: artist"></div>
     <div data-bind="text: album"></div>
 </div>
@@ -58,7 +59,6 @@ To have a basic understanding of KnockoutJS and how the framework is applied in 
 function ViewModel() {
     this.artist = ko.observable();
     this.album = ko.observable();
-    this.style = 'output'
 };
 
 ko.applyBindings(new ViewModel());
@@ -70,15 +70,15 @@ ko.applyBindings(new ViewModel());
 
 ## Bindings
 
-- text
-- textInput
-- visible
-- css
-- style
-- attr
-- click
-- event
-- custom binding handlers (if time, more on these later)
+- `text`
+- `textInput`
+- `visible`
+- `css`
+- `style`
+- `attr`
+- `click`
+- `event`
+- custom binding handlers
 
 ---
 
