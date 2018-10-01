@@ -1,4 +1,4 @@
-**Package Config vs Package Settings**
+## Package Config vs Package Settings
 
 
 Package Settings

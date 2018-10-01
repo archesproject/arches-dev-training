@@ -1,4 +1,4 @@
-**Packages**
+## Packages
 
 - A package contains all the data you'd like loaded into your Arches implementation
     * business data

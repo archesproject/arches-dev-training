@@ -1,4 +1,4 @@
-**Project Directory Structure**
+## Project Directory Structure
 
 ```
 Example Project

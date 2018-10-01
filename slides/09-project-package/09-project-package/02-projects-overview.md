@@ -1,4 +1,4 @@
-**Projects**
+## Projects
 
 - Projects facilitate all of the customizations that you will need to make one installation of Arches different from the next
 - You can update html to modify web page branding, and add functions, datatypes, and widgets to introduce new functionality

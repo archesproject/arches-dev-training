@@ -1,4 +1,4 @@
-**Package Directory Structure**
+## Package Directory Structure
 
 ```
 Example Package
