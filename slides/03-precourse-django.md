@@ -6,7 +6,7 @@
 
 ---
 
-**Lesson Overview**
+## Lesson Overview
 
 In this lesson we will briefly discuss each of the following Django concepts with examples and an explanation of how they are used in Arches
 
@@ -21,7 +21,7 @@ In this lesson we will briefly discuss each of the following Django concepts wit
 
 ---
 
-***Lesson Goals***
+## Lesson Goals
 
 To have a basic understanding of Django and how the framework is applied in Arches
 
@@ -56,10 +56,10 @@ be worth the time to do it.
 Typically Django projects are typically run in a virtual environment
 
 ```bash
-$ pip install virtualenv
-$ virtualenv env
-$ source env/bin/activate
-$(env) pip install django
+pip install virtualenv
+virtualenv env
+source env/bin/activate
+pip install django
 ```
 
 ---
@@ -96,12 +96,13 @@ As your app is developed, models will change. For example you might:
 You can update your database with these changes
 by running migrations:
 
+- create a new migration from your `models.py`
 ```bash
-$ python manage.py makemigrations #create a migration file
+python manage.py makemigrations
 ```
-
+- run any pending migrations
 ```bash
-$ python manage.py migrate #run the migration file
+python manage.py migrate
 ```  
 
 ---
@@ -143,7 +144,7 @@ urlpatterns = [
         r'^graph_designer/(?P<graphid>%s)$' % uuid_regex,
         GraphDesignerView.as_view(),
         name='graph_designer'
-        ),
+    ),
 ]
 ```
 http://localhost:8081/graph_designer/ccbd1537-ac5e-11e6-84a5-026d961c88e6
@@ -163,7 +164,7 @@ Uses data from a view to render a web page.
 {% endfor %}
 </ul>
 ```
-```
+```html
 <ul>
     <li>file-list</li>
     <li>string</li>
@@ -194,38 +195,39 @@ BTW, Arches is a Django Project
 (settings.py)
 
 Application configuration:
-    ```python
-    DEBUG = True
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+
+```python
+DEBUG = True
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-    LANGUAGE_CODE = 'en-us'
-    TIME_ZONE = 'UTC'
-    ```
+}
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+```
 
 ---
 
 ## Admin and Management Commands
 
 ```bash
-$ django-admin startproject mysite
-$ archesproject create myproject
+django-admin startproject mysite
+archesproject create myproject
 ```
 
 ```bash
-$ python manage.py createsuperuser
-$ python manage.py startapp mynewapp
-$ python manage.py runserver
+python manage.py createsuperuser
+python manage.py startapp mynewapp
+python manage.py runserver
 ```
 
 You can easily add custom management commands
 
 ```bash
-$ python manage.py packages -o load_package
-$ python manage.py es index_database
+python manage.py packages -o load_package
+python manage.py es index_database
 ```
 
 ---

@@ -11,5 +11,5 @@ slide:
   theme: bespoke-theme-sea
   targetBlank: true
 extends:
-  js:
+  js: index.js
   css: style.css
