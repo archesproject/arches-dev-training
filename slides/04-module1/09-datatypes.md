@@ -1,18 +1,16 @@
-**Datatypes**
+## Datatypes
 
-Defines how data is managed for a node
+Define how data are managed for a given node; some examples include:
 
 - String
 - Number
 - Boolean
 - Date
-- EDTF
 - Concept
 - Domain
 - GeoJson
 
-***Example operations***
-- Validation
-- Transforming data when indexed in Elasticsearch
+Datatypes are responsible for all backend operations, including:
+- Validating values prior to save
+- Indexing and searching for values in Elasticsearch
 - Transforming data on import and export
-- Defines search filters for its type

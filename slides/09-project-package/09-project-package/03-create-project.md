@@ -1,5 +1,5 @@
 ## Creating a Project
 
-```
-            arches-project create mynewproject
+```bash
+arches-project create mynewproject
 ```
