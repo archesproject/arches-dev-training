@@ -11,7 +11,7 @@
 
 In this lesson we will briefly discuss each of the following Knockout concepts with examples and an explanation of how they are used in Arches
 
-- ViewModels
+- View Models
 - Data binding
 - Computeds & subscriptions
 - Control flow
@@ -37,7 +37,17 @@ To gain a basic understanding of what KnockoutJS is and how the framework is use
 
 ---
 
-## A very simple ViewModel
+## Model-View-View Model (MVVM)
+
+MVVM is a design pattern for building complex applications. KnockoutJS uses this pattern
+
+- **model**: "your application’s stored data."
+- **view model**: "a pure-code representation of the data and operations on a UI"
+- **view**: "a visible, interactive UI representing the state of the view model." ("your HTML document")
+
+---
+
+## A very simple View Model
 
 ```css
 .output {
@@ -82,51 +92,53 @@ ko.applyBindings(new ViewModel());
 
 ---
 
-## Subscriptions/Computeds
+## Subscriptions & Computeds
 
 - Subscription - calls a handler when a single observable changes
 - Computeds - a function that returns a value if an observable within it changes
 
 ---
 
-## Subscriptions/Computeds: ViewModel
+## Subscriptions & Computeds: View Model
 
 ```javascript
+var self = this;
 this.artist = ko.observable("");
 this.album = ko.observable("");
-this.recentchange = ko.observable();
 this.albums = ko.observableArray([]);
 
 this.addAlbum = function(){
-    this.albums.push({artist: this.artist(), album: this.album()});
+    self.albums.push({
+        artist: self.artist(),
+        album: self.album()
+    });
 };
 
 this.albums.subscribe(function(albums){
-    var currentItem = _.last(albums)
-    self.recentchange("You added " + currentItem.artist + ", " + currentItem.album);
-})
+    console.log('albums added:', albums);
+});
 
-this.summary = ko.computed(function(){
-    var res = "<ul>"
-    _.map(self.albums(), function(album){
-        res += "<li>Artist: " + album.artist + ",   Album: " + album.album + "</li>"});
-    res += "</ul>"
-    return res
+this.lastChange = ko.computed(function() {    
+    var albums = self.albums();
+    if (albums.length > 0) {
+        var currentItem = albums[albums.length-1];
+        return "You added " + currentItem.artist + ", " + currentItem.album;
+    }
+    return '';
 });
 ```
 
 ---
 
-## Subscriptions/Computeds: HTML
+## Subscriptions & Computeds: HTML
 
-### We can bind to our computed:
+We can bind to our computed, as we would with an observable:
 
 ```html
 <label>Artist:  <input data-bind="textInput: artist"></input></label>
 <label>Album:  <input data-bind="textInput: album"></input></label>
 <button data-bind="click: addAlbum">Add</button>
-<div data-bind="html: summary"></div> <!-- Our computed -->
-<p data-bind="text: recentchange"></p> <!-- Our subscription updates recentchange -->
+<p data-bind="text: lastChange"></p> <!-- Our computed -->
 ```
 
 [demo](https://archesproject.github.io/arches-dev-training-demos/knockout/demo2-bindings.html)
@@ -135,7 +147,7 @@ this.summary = ko.computed(function(){
 
 ## Control logic
 
-### Inline and Virtual
+Inline and virtual:
 
 ```html
 <div data-bind="if: someBooleanValue"></div>
@@ -153,7 +165,7 @@ this.summary = ko.computed(function(){
 
 ## Components
 
-- Composed of template and view model
+- Composed of a template and a view model
 - Reusable within an application
 - Registering a component:
 ```javascript
@@ -180,17 +192,23 @@ ko.components.register('album-list', {
 
 ## Using multiple components
 
-### Different components can be used to represent the same data differently:
+Different components can be used to represent the same data differently:
 
 ```html
 <div data-bind='component: {
     name: "album-list-simple",
-    params: {title: "Component 1", albumlist: albums}
+    params: {
+        title: "Component 1",
+        albumlist: albums
+    }
 }'></div>
 
 <div data-bind='component: {
     name: "album-list",
-    params: {title: "Component 2", albumlist: albums}
+    params: {
+        title: "Component 2",
+        albumlist: albums
+    }
 }'></div>
 ```
 
@@ -200,20 +218,28 @@ ko.components.register('album-list', {
 
 ## Reusing Components
 
-### Components can be reused within an application with different configurations:
+Components can be reused within an application with different configurations:
 
 ```html
 <div data-bind='component: {
     name: "album-list",
-    params: {title: "Component", albumlist: albums}
+    params: {
+        title: "Component",
+        albumlist: albums
+    }
 }'></div>
 
 <div data-bind='component: {
     name: "album-list",
-    params: {title: "Same component", albumlist: albums, context: "agg"}
+    params: {
+        title: "Same component",
+        albumlist: albums,
+        showCount: true
+    }
 }'></div>
-
-<!--ko if: context -->
+```
+```html
+<!--ko if: showCount -->
     <div style="padding-top: 10px" data-bind="text: 'Album count: ' + albums().length"></div>
 <!-- /ko -->
 ```
