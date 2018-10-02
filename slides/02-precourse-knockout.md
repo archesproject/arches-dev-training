@@ -170,8 +170,12 @@ Inline and virtual:
 - Registering a component:
 ```javascript
 ko.components.register('album-list', {
-    viewModel: {require: 'js/album-list'},
-    template: {require: 'text!templates/album-list.html'}
+    viewModel: {
+        require: 'js/album-list'
+    },
+    template: {
+        require: 'text!templates/album-list.html'
+    }
 });
 ```
 
@@ -182,7 +186,9 @@ ko.components.register('album-list', {
 ```html
 <div data-bind='component: {
     name: "album-list",
-    params: {albumlist: albums}
+    params: {
+        albumlist: albums
+    }
 }'></div>
 ```
 

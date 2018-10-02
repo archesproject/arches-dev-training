@@ -33,27 +33,25 @@ be worth the time to do it.
 
 ## What is Django?
 
-#### The web framework for perfectionists with deadlines
-
+- "The web framework for perfectionists with deadlines"
 - Full-featured Python server-side web framework.
-- Well documented
-- Active community
-- It offers:
+- Strong documentation & community
+- Features:
     - Authentication
     - ORM and database migrations
     - Template language
     - Admin interface
-    - Internationalization
-    - Dev server
-    - GeoDjango (spatial datatypes: Geography and Geometry)
-    - Email support
+    - Internationalization/Localization
+    - Development server
+    - Support for spatial data
+    - Email/Messaging
     - and more ...
 
 ---
 
 ## VirtualEnv
 
-Typically Django projects are typically run in a virtual environment
+Django projects are typically run inside of a virtual environment
 
 ```bash
 pip install virtualenv
@@ -64,9 +62,9 @@ pip install django
 
 ---
 
-## Models
-(models.py)
-#### Django's object representation of your database schema
+## Models (`models.py`)
+
+Models are Django's object representation of your database schema:
 
 ```python
 class DDataType(models.Model):
@@ -96,7 +94,7 @@ As your app is developed, models will change. For example you might:
 You can update your database with these changes
 by running migrations:
 
-- create a new migration from your `models.py`
+- create a new migration from your models
 ```bash
 python manage.py makemigrations
 ```
@@ -107,10 +105,9 @@ python manage.py migrate
 
 ---
 
-## Views
-(views.py)
+## Views (`views.py`)
 
-Send data from a model to a template:
+Views define how Django handles requests.  Often, views will retrieve data from a model and use that to render a template (HTML):
 
 ```python
 @method_decorator(group_required('Graph Editor'), name='dispatch')
@@ -122,7 +119,7 @@ class GraphDesignerView(GraphBaseView):
         return render(request, 'graph-designer.htm', context)
 ```
 
-or just as data:
+...or they may simply return the model data (JSON):
 
 ```python
 class ResourceData(View):
@@ -134,8 +131,7 @@ class ResourceData(View):
 
 ---
 
-## Routing
-(urls.py)
+## Routing (`urls.py`)
 
 ```python
 uuid_regex = settings.UUID_REGEX
@@ -147,16 +143,18 @@ urlpatterns = [
     ),
 ]
 ```
-http://localhost:8081/graph_designer/ccbd1537-ac5e-11e6-84a5-026d961c88e6
 
-The name argument allows referencing the url from within templates
+For example, if you server is running at localhost:8080, an example of the above URL would look like this:
+
+http://localhost:8000/graph_designer/ccbd1537-ac5e-11e6-84a5-026d961c88e6
 
 ---
 
 ## Templates
 
-Uses data from a view to render a web page.
+Uses data from a view to render a web page (using the Django template language).
 
+An example template:
 ```html
 <ul>
 {% for datatype in datatypes %}
@@ -164,12 +162,13 @@ Uses data from a view to render a web page.
 {% endfor %}
 </ul>
 ```
+
+The above template might render something like this:
 ```html
 <ul>
     <li>file-list</li>
     <li>string</li>
     <li>number</li>
-    ... and so on
 </ul>
 ```
 ---
@@ -190,9 +189,7 @@ BTW, Arches is a Django Project
 
 ---
 
-## Settings
-
-(settings.py)
+## Settings (`settings.py`)
 
 Application configuration:
 
@@ -235,7 +232,7 @@ python manage.py es index_database
 ## Django Apps
 
 A project's functionality can be divided by subject into `Apps`
-This is where are models and views go:
+This is where our models and views go:
 
 ```
 app/
