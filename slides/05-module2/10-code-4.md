@@ -1,4 +1,4 @@
-### Example: BooleanDataType widget HTML
+### Example: BooleanDataType configuration HTML
 
 ```html
 {% load i18n %}

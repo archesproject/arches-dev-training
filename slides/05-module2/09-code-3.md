@@ -1,4 +1,4 @@
-### Example: BooleanDataType widget JS
+### Example: BooleanDataType configuration JS
 
 ```javascript
 define(['knockout'], function(ko) {

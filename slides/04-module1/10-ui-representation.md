@@ -1,8 +1,8 @@
-**UI Representation**
+## UI Representation
 
-- Cards - UI representation of a **nodegroups**
-- Widgets - UI representation of a **node** based on datatype
-- A datatype can be represented by different widgets
+- Cards - UI representation of a **nodegroup/tile**
+- Widgets - UI representation of a **node/value** based on datatype
+- A datatype can be represented by different widgets, for example:
 
 | datatype | widgets |
 |:--------:|:-------:|
