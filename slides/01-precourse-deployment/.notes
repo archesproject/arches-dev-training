@@ -1,21 +1,14 @@
-workshop on arches hosting, shorter and smaller in scope (Pre-course Workshop)
+Pre-course Workshop on Arches Deployment/Hosting:
+Lecture to people on things to think about when you are deploying arches for production without code
+This is not a class on how to configure AWS or Docker or Azure.
 
-90 minutes lecturing to people on things to think about when you are deploying arches for production
-
-We will want to talk about deploying arches on different platforms
+Talk about deploying arches on different platforms, with a heads up on pitfalls for each of those options/patterns:
 Linux, Windows/Azure, Docker or Amazon
 
-A heads up on pitfalls for each of those options/patterns
+Discussion about some of the key configuration things to set for Arches, including:
+S3 for files
 
-Discussion about some of the key configuration things to set for Arches. Stuff like 
-S3 for files, do this;
-
-8 hours to develop that. 
-
-
-not to be code, but slides to lecture to people. 
-
-You can pick any of these patterns,
+Deployment patterns:
 super simple on Linux
 Super simple on Amazon
 Can do it on docker with offers
@@ -26,22 +19,11 @@ Stuff that you have to set for configuring arches to your own specs. Some of tho
 important things like defining DB connection strings
 Configure arches to save files to s3.
 
-For amazon thing, we could show what we did for CA Parks. 
-
 You have a lot of implementation options.
 Take away should be "I have lots of options to deploy this to production, both straight forward (with install script on linux) to use AWS to have a more sophisticated architecture, which gives more scalability, to Windows with known constraints, to Docker which is snazzy."
 
-No class on how to configure docker or AWS, or azure. here are some sign posts in how to point you in the right direction
-
-here are things you are going to configure for production. 
-
 Actual deployment is so dependent on variables about the organization and deployment.
-
-Talk with Cyrus RE: 
-
-Outlining what 90 minutes will look like, with topics to cover and order, then pretty quickly generate the slides. 
-
-Done by October, so not too much 
+Include ideas on things to configure for production. 
 
 Many URLS are encouraged. 
 "Out of the box, we don't optimize PostgreSQL, here are some links that you could look into"
