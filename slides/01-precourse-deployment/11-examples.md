@@ -4,4 +4,3 @@
     -   Distributed Architecture
 -   Arches V4 Demo Site - [http://v4demo.archesproject.org](http://v4demo.archesproject.org)
     -   Single Server
-    
