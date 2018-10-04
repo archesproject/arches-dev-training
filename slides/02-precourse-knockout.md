@@ -145,9 +145,11 @@ We can bind to our computed, as we would with an observable:
 
 ---
 
-## Control logic
+## Control flow
 
-Inline and virtual:
+- Knockout provides bindings for managing control flow
+- `foreach`, `if`, `ifnot`, `with`
+- can be "virtual" (as comments) or inline (via `data-bind`)
 
 ```html
 <div data-bind="if: someBooleanValue"></div>
@@ -224,7 +226,7 @@ Different components can be used to represent the same data differently:
 
 ## Reusing Components
 
-Components can be reused within an application with different configurations:
+Components can be reused within an application with different data & configurations:
 
 ```html
 <div data-bind='component: {

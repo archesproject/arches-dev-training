@@ -1,4 +1,4 @@
-### Example: BooleanDataType Class
+### Example: BooleanDataType Python class
 
 ```python
 class BooleanDataType(BaseDataType):
