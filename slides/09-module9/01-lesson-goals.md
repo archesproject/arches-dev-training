@@ -1,4 +1,4 @@
-***Lesson Goals***
+## Lesson Goals
 
 - To understand the distinction between a project and a package
 - To be familiar with the directory structure of a project and a package

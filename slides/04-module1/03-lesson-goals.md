@@ -1,4 +1,4 @@
-***Lesson Goals***
+## Lesson Goals
 
 - Understand the basic architecture of Arches
 - Be familiar with Arches concepts and nomenclature

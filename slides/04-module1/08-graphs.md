@@ -1,5 +1,4 @@
-
-**Graphs**
+## Graphs
 
 - Resource Models
     - The blueprint of a resource instance

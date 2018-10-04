@@ -1,4 +1,4 @@
-<!-- sectionTitle: The Arches Platform -->
+<!-- sectionTitle: Module 1: The Arches Platform -->
 
 # Module 1
 ## The Arches Platform

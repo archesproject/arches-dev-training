@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bespoke-slide {
+    background-color: rgb(48, 97, 122);
+}
+
 :root {
   --color-gray: #b7b8b7;
 }
@@ -77,4 +87,13 @@ pre {
 
 h3 {
     margin: 5px 0;
+}
+
+code {
+    padding: 0;
+    color: rgb(194, 238, 255);
+}
+
+pre code {
+    color: black;
 }
