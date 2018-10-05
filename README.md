@@ -29,3 +29,10 @@ yarn run deploy
 ```
 
 Fusuma.js is used to display the developer training slides. For more information on Fusuma, Fusuma slide syntax, and slide examples, visit: [Fusuma](https://github.com/hiroppy/fusuma)
+
+### Dev training project and package
+
+Through the course of the training students will be working with an Arches project configured for this course. It can be found here: https://github.com/archesproject/arches-dev-training-project
+
+The final product of the training will be an arches package. A complete version of this package can be found here: https://github.com/archesproject/arches-dev-training-pkg
+
