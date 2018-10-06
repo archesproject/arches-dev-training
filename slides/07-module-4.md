@@ -1,4 +1,4 @@
-<!-- sectionTitle: Module 2: Introduction to Datatypes -->
+<!-- sectionTitle: Module 4: Introduction to Components -->
 
 # Module 4
 ## Introduction to Components in Arches
