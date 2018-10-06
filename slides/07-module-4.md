@@ -28,7 +28,7 @@
 - **Widgets:**  the UI for a tile
 - **Card components:**  the UI for a collection of widgets (or a collection of cards)
 - **Reports:**  the UI for a resource report header and the display of cards
-- **Functions:**  the UI for function configuration (note covered in this course)
+- **Functions:**  the UI for function configuration (not covered in this course)
 
 Lets look at some examples in Arches...
 
