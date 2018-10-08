@@ -74,7 +74,7 @@ function ViewModel() {
 ko.applyBindings(new ViewModel());
 ```
 
-[demo](https://archesproject.github.io/arches-dev-training-demos/knockout/demo1-vm.html)
+[demo 1](https://codepen.io/fargeo/pen/KGgpYz)
 
 ---
 
@@ -141,7 +141,7 @@ We can bind to our computed, as we would with an observable:
 <p data-bind="text: lastChange"></p> <!-- Our computed -->
 ```
 
-[demo](https://archesproject.github.io/arches-dev-training-demos/knockout/demo2-bindings.html)
+[demo 2](https://codepen.io/fargeo/pen/ePdNov)
 
 ---
 
@@ -194,7 +194,7 @@ ko.components.register('album-list', {
 }'></div>
 ```
 
-[demo](https://archesproject.github.io/arches-dev-training-demos/knockout/demo3-components-intro.html)
+[demo 3](https://codepen.io/fargeo/pen/dgpoLj)
 
 ---
 
@@ -220,7 +220,7 @@ Different components can be used to represent the same data differently:
 }'></div>
 ```
 
-[demo](https://archesproject.github.io/arches-dev-training-demos/knockout/demo4-components.html)
+[demo 4](https://codepen.io/fargeo/pen/GYjJLe)
 
 ---
 
@@ -252,4 +252,4 @@ Components can be reused within an application with different data & configurati
 <!-- /ko -->
 ```
 
-[demo](https://archesproject.github.io/arches-dev-training-demos/knockout/demo5-components.html)
+[demo 5](https://codepen.io/fargeo/pen/wYzabw)
