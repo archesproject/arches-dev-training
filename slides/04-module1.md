@@ -51,14 +51,6 @@
 
 ---
 
-## Managing dependencies
-
-- PIP
-- Node/Yarn
-- Require.js
-
----
-
 ## Contributing to Arches
 
 - Communicating about development issues:
@@ -71,16 +63,12 @@
     - Documentation is in a dedicated repo
     - Written in restructured text
     - Converted to HTML using Sphinx
-- Submitting pull requests:
+- Submitting pull requests
+    - Please create a ticket in the Arches repo first
+    - Create your own fork with a branch for the ticket
+    - Submit the pull request from your fork
 - Developer Code of Conduct
-
----
-
-## Elasticsearch
-
-What is it used for?
-
-How can I inspect my data?
+    - Be respectful, use clean language
 
 ---
 
@@ -105,7 +93,19 @@ How can I inspect my data?
 
 ## Resource Instances
 
-JSON objects that store business data for nodegroups
+- Resource Model vs Resource Instance
+- Resource models often referred as `models`
+- Resource instances often referred to as `resources` or `instances`
+
+---
+
+## Elasticsearch
+
+The structure of business data in ElasticSearch is not exactly the same as in
+PostgreSQL.
+
+- [elasticsearch-head](https://github.com/mobz/elasticsearch-head)
+- [elasticsearch-head chrome plugin](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm/)
 
 ---
 
@@ -159,6 +159,17 @@ Datatypes are responsible for all backend operations, including:
 - Django template file paths and names generally match their javascript counterparts:
     - `arches/app/templates/views/components/widgets/number.htm`
     - `arches/app/media/js/views/components/widgets/number.js`
+
+---
+
+## Managing dependencies
+
+- Python pip (requirements.txt and requirements-dev.txt)
+- Node/Yarn (you can add to these dependencies in you're projects package.json file)
+
+- For editing documentation you need  
+    - sphinx
+    - sphinx-rtd-theme
 
 ---
 
