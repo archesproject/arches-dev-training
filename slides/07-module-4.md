@@ -75,18 +75,23 @@ So, where should you place them?
 
 ## Component file locations
 
-### Templates
-- `/templates/views/components/card_components/address-card.html`
-- `/templates/views/components/reports/address-report.html`
-- `/templates/views/components/widgets/geocoder.html`
+- Example template files:
+```
+/templates/views/components/card_components/address-card.html
+/templates/views/components/reports/address-report.html
+/templates/views/components/widgets/geocoder.html
+```
 
-### View Models
-- `/media/js/views/components/card_components/address-card.js`
-- `/media/js/views/components/reports/address-report.js`
-- `/media/js/views/components/widgets/geocoder.js`
+- Example javascript files:
+```
+/media/js/views/components/card_components/address-card.js
+/media/js/views/components/reports/address-report.js
+/media/js/views/components/widgets/geocoder.js
+```
 
-### Note: the html and js file base names match
-| View Model         |   Template            |
+- The html and js file base names should match:
+
+| Javscript          |   HTML                |
 |:------------------:|:---------------------:|
 | address-card.js    |   address-card.html   |
 | address-report.js  |   address-report.html |
@@ -95,16 +100,12 @@ So, where should you place them?
 
 ## The configuration (.json) file
 
-In the training project the config files are located here:
-
-
-- `/card_components/address-card.json`
-- `/reports/address-report.json`
-- `/widgets/geocoder.json`
-
-
-But, the can go anywhere in your project. Ultimately, they will typically
-be saved in a package.
+- In the training project the config files are located here:
+    - `/card_components/address-card.json`
+    - `/reports/address-report.json`
+    - `/widgets/geocoder.json`
+- These can go anywhere in your project
+- Ultimately, these will typically be saved in a package
 
 ---
 
@@ -124,7 +125,7 @@ Contents corresponds to what is loaded in Postgres.
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget](/images/widget-db-screenshot.png
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget](/images/widget-db-screenshot.png)
 
 ---
 
@@ -132,23 +133,30 @@ Contents corresponds to what is loaded in Postgres.
 
 Each component has its own management command class:
 
-- arches/management/commands/widget.py
-- arches/management/commands/report.py
-- arches/management/commands/card_component.py
-
-- $(env) python manage.py widget register -s myproject/widgets/geocoder.json
-- $(env) python manage.py report register -s myproject/reports/geocoder.json
-- $(env) python manage.py card_component register -s myproject/card_components/geocoder.json
+```
+arches/management/commands/widget.py
+arches/management/commands/report.py
+arches/management/commands/card_component.py
+```
+For example:
+```bash
+$(env) python manage.py widget register -s myproject/widgets/geocoder.json
+$(env) python manage.py report register -s myproject/reports/address.json
+$(env) python manage.py card_component register -s myproject/card_components/address.json
+```
 
 ---
 
 ## Unregistering components
 
-A compent's `name` is unique in Arches and is used as it's identifier:
+- Components can be unregistered from Arches as below:
+- (A component's `name` is unique in Arches and is used as it's identifier)
 
-- $(env) python manage.py widget unregister -n 'geocoder'
-- $(env) python manage.py report unregister -n 'address-report'
-- $(env) python manage.py card_component unregister -n 'address-card'
+```bash
+$(env) python manage.py widget unregister -n 'geocoder'
+$(env) python manage.py report unregister -n 'address-report'
+$(env) python manage.py card_component unregister -n 'address-card'
+```
 
 ---
 
@@ -157,9 +165,11 @@ A compent's `name` is unique in Arches and is used as it's identifier:
 You can list the arguments using `--help`. For example:
 
 - To get the names of the commands:  
-```$(env) python manage.py --help```
+```
+$(env) python manage.py --help
+```
 
 - To get the arguments of a command (widget in this case):  
-```$(env) python manage.py widget --help```
-
----
+```
+$(env) python manage.py widget --help
+```

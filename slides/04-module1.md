@@ -56,38 +56,52 @@
 - Communicating about development issues:
     - Ask questions on the forum: https://groups.google.com/forum/#!forum/archesproject
     - Write a ticket on GitHub: https://github.com/archesproject/arches
-- Coding Conventions:
-    - PEP 8
-    - ESlint: 'recommended'
 - Writing documentation:
     - Documentation is in a dedicated repo
     - Written in restructured text
     - Converted to HTML using Sphinx
+
+---
+
+## Contributing Code
+
+- Code style conventions:
+    - Python: PEP 8
+    - JavaScript: ESlint, 'recommended'
 - Submitting pull requests
     - Please create a ticket in the Arches repo first
     - Create your own fork with a branch for the ticket
     - Submit the pull request from your fork
 - Developer Code of Conduct
-    - Be respectful, use clean language
+    - Be respectful
+    - Use clean and inclusive language
 
 ---
 
 ## Graphs
 
-- Resource Models
-    - The blueprint of a resource instance
-    - Conceptually similar to a class in an object-oriented programming language
-    - Composed of a root node and one or more branches
-- Branches
-    - Building blocks of a resource model
-    - Generally composed of nodes of a particular theme
-    - Nodes on a branch that share the same parent comprise a Nodegroup
-- Nodes
-    - The smallest unit of a resource model
-    - Semantic or data collecting
-- Edges
-    - Relationships between nodes.
-    - In some cases has a relationship with its parent defined
+- Arches models business data as "graphs"
+- There are two kinds of "graphs" in Arches:
+    - Resource Models
+        - The blueprint of a resource instance
+        - Conceptually similar to a class in an object-oriented programming language
+        - Composed of a root node and one or more branches
+    - Branches
+        - Building blocks of a resource model
+        - Generally composed of nodes of a particular theme
+        - Nodes on a branch that share the same parent comprise a Nodegroup
+    
+---
+
+## Graphs
+
+- Graphs are comprised of:
+    - Nodes
+        - The smallest unit of a resource model
+        - Semantic or data collecting
+    - Edges
+        - Relationships between nodes.
+        - In some cases has a relationship with its parent defined
 
 ---
 
@@ -111,20 +125,12 @@ PostgreSQL.
 
 ## Datatypes
 
-Define how data are managed for a given node; some examples include:
-
-- String
-- Number
-- Boolean
-- Date
-- Concept
-- Domain
-- GeoJson
-
-Datatypes are responsible for all backend operations, including:
-- Validating values prior to save
-- Indexing and searching for values in Elasticsearch
-- Transforming data on import and export
+- Datatypes define how data are managed for a given node
+- For example: strings, numbers, dates, etc.
+- Datatypes are responsible for all backend operations, including:
+    - Validating values prior to save
+    - Indexing and searching for values in Elasticsearch
+    - Transforming data on import and export
 
 ---
 
