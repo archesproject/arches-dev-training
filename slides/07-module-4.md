@@ -124,7 +124,7 @@ Contents corresponds to what is loaded in Postgres.
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget](/images/widget-db-screenshot.png
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget](/images/widget-db-screenshot.png)
 
 ---
 
