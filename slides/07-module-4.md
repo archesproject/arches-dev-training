@@ -161,5 +161,3 @@ You can list the arguments using `--help`. For example:
 
 - To get the arguments of a command (widget in this case):  
 ```$(env) python manage.py widget --help```
-
----
