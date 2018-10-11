@@ -51,7 +51,16 @@ python manage.py packages -o add_mapbox_layer -j /path/to/mapbox_style.json -n "
 
 ---
 
-## Adding basemaps & overlays from external services
+## Adding basemaps from external services
+
+- add the basemap from Mapbox by running the following: 
+```bash
+python manage.py packages -o add_mapbox_layer -j arches_dev_training/map_layers/mapbox_spec_json/basemaps/decimal.json -n "Decimal" -b
+```
+- add the basemap from Ordinance Survey by running the following: 
+```bash
+python manage.py packages -o add_mapbox_layer -j arches_dev_training/map_layers/mapbox_spec_json/basemaps/os-zoomstack-outdoor.json -n "OS Zoomstack Outdoor" -b
+```
 
 ---
 
@@ -89,15 +98,21 @@ python manage.py packages -o add_tileserver_layer -t /path/to/tileserver_config.
 
 ---
 
-## Adding an overlay from PostGIS using TileStache
-
----
-
 ## Adding interactivity
 
 - Arches provides a number of ways to add interactivity to vectors added to the map
 - Vectors representing resource instances can be assigned a property called "`resourceinstanceid`" to give them the default resource instance popup
 - There are also ways to make vectors available for [selection as drawings](https://arches.readthedocs.io/en/stable/creating-new-map-layers/#making-selectable-vector-layers) on the map and [add custom popups](https://arches.readthedocs.io/en/stable/creating-new-map-layers/#customizing-map-popup-content)
+
+---
+
+## Adding addresses from PostGIS using TileStache
+
+- First we need to create a view of addreses by running the SQL contained in `arches_dev_training/sql/addresses.sql`
+- Now, we can add our new address data as a layer by running:
+```bash
+python manage.py packages -o add_tileserver_layer -t arches_dev_training/map_layers/tile_server/overlays/addresses.json -n "Addresses"
+```
 
 ---
 
