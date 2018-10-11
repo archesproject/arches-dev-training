@@ -55,11 +55,15 @@ python manage.py packages -o add_mapbox_layer -j /path/to/mapbox_style.json -n "
 
 - add the basemap from Mapbox by running the following: 
 ```bash
-python manage.py packages -o add_mapbox_layer -j arches_dev_training/map_layers/mapbox_spec_json/basemaps/decimal.json -n "Decimal" -b
+python manage.py packages -o add_mapbox_layer \
+-j arches_dev_training/map_layers/mapbox_spec_json/basemaps/decimal.json \
+-n "Decimal" -b
 ```
 - add the basemap from Ordinance Survey by running the following: 
 ```bash
-python manage.py packages -o add_mapbox_layer -j arches_dev_training/map_layers/mapbox_spec_json/basemaps/os-zoomstack-outdoor.json -n "OS Zoomstack Outdoor" -b
+python manage.py packages -o add_mapbox_layer \
+-j arches_dev_training/map_layers/mapbox_spec_json/basemaps/os-zoomstack-outdoor.json \
+-n "OS Zoomstack Outdoor" -b
 ```
 
 ---
@@ -93,7 +97,8 @@ python manage.py packages -o add_mapbox_layer -j arches_dev_training/map_layers/
 - `tileserver_layers` records can be managed via the admin interface or CLI
 - tileserver layers (and related map sources and layers) can be created from a JSON file using the following command:
 ```bash
-python manage.py packages -o add_tileserver_layer -t /path/to/tileserver_config.json -n "New Tileserver Layer"
+python manage.py packages -o add_tileserver_layer \
+-t /path/to/tileserver_config.json -n "New Tileserver Layer"
 ```
 
 ---
@@ -111,7 +116,8 @@ python manage.py packages -o add_tileserver_layer -t /path/to/tileserver_config.
 - First we need to create a view of addreses by running the SQL contained in `arches_dev_training/sql/addresses.sql`
 - Now, we can add our new address data as a layer by running:
 ```bash
-python manage.py packages -o add_tileserver_layer -t arches_dev_training/map_layers/tile_server/overlays/addresses.json -n "Addresses"
+python manage.py packages -o add_tileserver_layer \
+-t arches_dev_training/map_layers/tile_server/overlays/addresses.json -n "Addresses"
 ```
 
 ---
