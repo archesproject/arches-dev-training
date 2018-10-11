@@ -204,7 +204,8 @@ PostgreSQL.
 ```bash
 git clone https://github.com/archesproject/arches-dev-training-project.git
 ```
-- ...then build the your starter database like so **(with the virtual environment activated where you installed Arches)**:
+- ...then install packages and build the your starter database like so **(with the virtual environment activated where you installed Arches)**:
 ```bash
+yarn install
 python manage.py packages -o setup_db
 ```
