@@ -7,17 +7,18 @@
 
 ## Lesson Overview
 
-- review what widgets are in Arches
-    - what can they do?
-    - what roles to they play in Arches?
-    - where are widgets registered?
-    - what are they in code?
-    - when do I need a new widget?
-- look at code for widgets built into Arches
+- Review what widgets are in Arches
+- Where are widgets used in Arches
+- What are the basic building blocks of a widget
+
+- Lab:
+    - Create an geocoder widget to leverage our address datatype
+    - Register our widget in Arches
+    - Update our address datatype to use the geocoder widget
 
 ---
 
-## What are widgets?
+## Widget review
 
 - A widget is the UI representation of a node
 - They can be assigned to nodes with a datatype (not semantic)
@@ -27,7 +28,9 @@ every datatype in Arches has at least one:
     - boolean : radio/switch
     - concept : radio/dropdown
     - etc...
-- Widgets consist of front-end code only
+- As components widgets consist of front-end code only
+    - view model
+    - template
 
 ---
 
@@ -79,9 +82,11 @@ In the template, each widget has a dedicated block for each of these roles.
 `arches/app/media/js/viewmodels/widget.js`
 
 This makes some properties immediately available as ko observables
-- `any configs`
+- `configs`
 - `default value`
 - `widget label`
+- `value`
+- `value properties` (if your data is a simple object)
 
 ---
 
@@ -89,15 +94,6 @@ This makes some properties immediately available as ko observables
 
 ```javascript
 define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetViewModel) {
-    /**
-    * registers a text-widget component for use in forms
-    * @function external:"ko.components".text-widget
-    * @param {object} params
-    * @param {string} params.value - the value being managed
-    * @param {function} params.config - observable containing config object
-    * @param {string} params.config().label - label to use alongside the text input
-    * @param {string} params.config().placeholder - default text to show in the text input
-    */
     return ko.components.register('text-widget', {
         viewModel: function(params) {
             params.configKeys = ['placeholder', 'width', 'maxLength', 'defaultValue'];
@@ -111,7 +107,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ## The widget manager
 
-![widget manager](/images/widget-manager.png)
+![widget manager](/images/widget-manager-config-form.png)
 
 ---
 
@@ -143,6 +139,12 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ---
 
+## The widget manager
+
+![widget manager](/images/widget-manager-form.png)
+
+---
+
 ## A basic widget form
 
 ### Markup is in the `form` block
@@ -167,3 +169,33 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 </div>
 {% endblock form %}
 ```
+
+---
+
+## Creating a geocoder widgets
+
+arches_dev_training/widgets/geocoder.json
+
+```javascript
+{
+    "name": "",
+    "component": "",
+    "defaultconfig": {
+        "placeholder": "Find an address..."
+    },
+    "helptext": null,
+    "datatype": null
+}
+```
+
+We need to update the name and component
+
+---
+
+## Get the name of your datatype
+
+We also need the name of the datatype:
+
+```python manage.py datatype list```
+
+---
