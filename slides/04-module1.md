@@ -189,12 +189,18 @@ PostgreSQL.
 
 ---
 
-## Working in class
+## Working in class - dependencies
 
 - You are expected to have the dependencies outlined [here](https://arches.readthedocs.io/en/stable/requirements-and-dependencies/) installed as well as [Arches](https://arches.readthedocs.io/en/stable/installation/)
 - You'll also need a git client and a text editor; we recommend [Atom](https://atom.io/)
 - If you don't have these installed already, you may want to follow along with a classmate today and install them before tomorrow's class
-- clone the repo [`archesproject/arches-dev-training-project`](https://github.com/archesproject/arches-dev-training-project) on GitHub:
+
+---
+
+## Working in class - project
+
+- throughout the class, we'll be doing development in an Arches project stored in a GitHub repository
+- to set up your local environment, clone the repository at [`archesproject/arches-dev-training-project`](https://github.com/archesproject/arches-dev-training-project) on GitHub:
 ```bash
 git clone https://github.com/archesproject/arches-dev-training-project.git
 ```
