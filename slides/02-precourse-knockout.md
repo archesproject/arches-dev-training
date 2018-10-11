@@ -1,4 +1,4 @@
-<!-- sectionTitle: KnockoutJS Intro -->
+<!-- sectionTitle: Pre-course B: KnockoutJS -->
 <!-- background: jellybean -->
 
 # KnockoutJS

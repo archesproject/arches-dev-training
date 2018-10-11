@@ -1,4 +1,4 @@
-<!-- sectionTitle: Django Intro -->
+<!-- sectionTitle: Pre-course C: Django -->
 <!-- background: jellybean -->
 
 # Django
