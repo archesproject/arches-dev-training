@@ -186,3 +186,19 @@ PostgreSQL.
     - Resource models and branches
     - Custom cards, datatypes, widgets, report templates
 - In contrast, a ***Project*** is essentially a Django `project`.
+
+---
+
+## Working in class
+
+- You are expected to have the dependencies outlined [here](https://arches.readthedocs.io/en/stable/requirements-and-dependencies/) installed as well as [Arches](https://arches.readthedocs.io/en/stable/installation/)
+- You'll also need a git client and a text editor; we recommend [Atom](https://atom.io/)
+- If you don't have these installed already, you may want to follow along with a classmate today and install them before tomorrow's class
+- clone the repo [`archesproject/arches-dev-training-project`](https://github.com/archesproject/arches-dev-training-project) on GitHub:
+```bash
+git clone https://github.com/archesproject/arches-dev-training-project.git
+```
+- ...then build the your starter database like so **(with the virtual environment activated where you installed Arches)**:
+```bash
+python manage.py packages -o setup_db
+```

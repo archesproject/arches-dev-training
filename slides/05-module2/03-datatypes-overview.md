@@ -8,3 +8,4 @@
     - etc...
 - consist of backend code for managing data
 - can optionally include a front end configuration component
+- data are actually stored as JSON (can be objects or literals)
