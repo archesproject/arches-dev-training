@@ -10,11 +10,7 @@
 - Review what widgets are in Arches
 - Where are widgets used in Arches
 - What are the basic building blocks of a widget
-
-- Lab:
-    - Create an geocoder widget to leverage our address datatype
-    - Register our widget in Arches
-    - Update our address datatype to use the geocoder widget
+- Lab - create a geocder widget
 
 ---
 
@@ -88,6 +84,9 @@ This makes some properties immediately available as ko observables
 - `value`
 - `value properties` (if your data is a simple object)
 
+`params.valueProperties = []`  //A list of object properties from your datatype
+`params.configKeys = []`  //A list of your widget's default configs
+
 ---
 
 ## A basic widget view model
@@ -105,7 +104,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 ```
 ---
 
-## The widget manager
+## The widget manager - config_form
 
 ![widget manager](/images/widget-manager-config-form.png)
 
@@ -139,7 +138,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ---
 
-## The widget manager
+## The widget manager - form
 
 ![widget manager](/images/widget-manager-form.png)
 
@@ -172,30 +171,191 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ---
 
-## Creating a geocoder widgets
+## Lab Overview
+
+We need a widget that will get an address from a geocoding service
+
+- Catch everyone up to the end of the last lab
+- Define our widget configs for a geocoder widget
+- Update our widget's view model
+- Update our widget's template
+- Register our widget in Arches
+- Update our address datatype so that it uses our widget by default
+
+---
+
+
+## Getting caught up
+
+```
+git checkout module-5
+python manage.py packages -o setup_db
+python manage.py datatype register -s arches_dev_training/datatypes/address.py
+python manage.py packages -o import_graphs -s arches_dev_training/graphs/Person.json
+python manage.py packages -o import_business_data -s arches_dev_training/data/Person.json -ow overwrite
+```
+
+---
+
+## Defining our widget properties in the .json file
 
 arches_dev_training/widgets/geocoder.json
 
 ```javascript
 {
-    "name": "",
-    "component": "",
+    "defaultconfig": {
+        "placeholder": "Find an address..."
+    }
+}
+```
+
+Add the rest of the widget's properties
+
+---
+
+## Widget Properties Demo
+
+---
+
+## Widget Properties
+
+```javascript
+{
+    "name": "geocoder",
+    "component": "views/components/widgets/geocoder",
     "defaultconfig": {
         "placeholder": "Find an address..."
     },
     "helptext": null,
-    "datatype": null
+    "datatype": "address"
 }
 ```
 
-We need to update the name and component
+---
+
+## Update our view model
+
+arches_dev_training/media/js/views/components/widgets/geocoder.js
+
+1. The widget's view model need the following parameter properties assigned:  
+`params.valueProperties =`  
+`params.configKeys =`
+
+2. We need use the `apply` method to inherit from the base widget view model
+
+3. Also, the `template` file path needs to be updated
 
 ---
 
-## Get the name of your datatype
-
-We also need the name of the datatype:
-
-```python manage.py datatype list```
+## View Model Demo
 
 ---
+
+## View Model
+
+1. `params.valueProperties = ['address','x','y'];`  
+   `params.configKeys = ['placeholder'];`
+
+2. `WidgetViewModel.apply(this, [params]);`
+
+3. `'text!templates/views/components/widgets/geocoder.htm'`
+
+---
+
+## Template
+
+Bind the label observable to the label element:
+```html
+{% block form %}
+<div class="row widget-wrapper">
+    <div class="form-group">
+        <label class="control-label widget-input-label" for=""></label>
+        <div class="col-xs-12">
+            <input style="padding-bottom: 5px;" data-bind="select2Query: {select2Config: select2Config}">
+        </div>
+    </div>
+</div>
+{% endblock form %}
+```
+
+
+Bind the placeholder observable to the placeholder config input:
+```html
+{% block config_form %}
+<div class="control-label">
+    {% trans "Placeholder" %}
+</div>
+<div class="col-xs-12 pad-no crud-widget-container">
+    <input type="text" placeholder="{% trans "Placeholder" %}" id=""   
+    class="form-control input-md widget-input">
+</div>
+{% endblock config_form %}
+```
+
+---
+
+## Template Demo
+
+---
+
+## Template
+
+```html
+{% block form %}
+<div class="row widget-wrapper">
+    <div class="form-group">
+        <label class="control-label widget-input-label" for="" data-bind="text:label"></label>
+        <div class="col-xs-12">
+            <input style="padding-bottom: 5px;" data-bind="select2Query: {select2Config: select2Config}">
+        </div>
+    </div>
+</div>
+{% endblock form %}
+
+{% block config_form %}
+<div class="control-label">
+    {% trans "Placeholder" %}
+</div>
+<div class="col-xs-12 pad-no crud-widget-container">
+    <input type="text" placeholder="{% trans "Placeholder" %}" id=""  
+    class="form-control input-md widget-input" data-bind="textInput: placeholder">
+</div>
+{% endblock config_form %}
+```
+
+---
+
+## Registering the Widget
+
+```bash
+$(env) python manage.py widget register -s arches_dev_training/widgets/geocoder.json
+```
+
+---
+
+## Making the geocoder the default widget for the address datatype
+
+```python
+geocoder = models.Widget.objects.get(name='geocoder')
+
+details = {
+    'datatype': 'address',
+    'iconclass': 'fa fa-location-arrow',
+    'modulename': 'datatypes.py',
+    'classname': 'AddressDataType',
+    'defaultwidget': geocoder,
+    'defaultconfig': None,
+    'configcomponent': None,
+    'configname': None,
+    'isgeometric': False,
+    'issearchable': False
+}
+```
+
+---
+
+## Updating our datatype
+
+```bash
+$(env) python manage.py datatype update -s arches_dev_training/datatypes/address.py
+```
