@@ -56,38 +56,52 @@
 - Communicating about development issues:
     - Ask questions on the forum: https://groups.google.com/forum/#!forum/archesproject
     - Write a ticket on GitHub: https://github.com/archesproject/arches
-- Coding Conventions:
-    - PEP 8
-    - ESlint: 'recommended'
 - Writing documentation:
     - Documentation is in a dedicated repo
     - Written in restructured text
     - Converted to HTML using Sphinx
+
+---
+
+## Contributing Code
+
+- Code style conventions:
+    - Python: PEP 8
+    - JavaScript: ESlint, 'recommended'
 - Submitting pull requests
     - Please create a ticket in the Arches repo first
     - Create your own fork with a branch for the ticket
     - Submit the pull request from your fork
 - Developer Code of Conduct
-    - Be respectful, use clean language
+    - Be respectful
+    - Use clean and inclusive language
 
 ---
 
 ## Graphs
 
-- Resource Models
-    - The blueprint of a resource instance
-    - Conceptually similar to a class in an object-oriented programming language
-    - Composed of a root node and one or more branches
-- Branches
-    - Building blocks of a resource model
-    - Generally composed of nodes of a particular theme
-    - Nodes on a branch that share the same parent comprise a Nodegroup
-- Nodes
-    - The smallest unit of a resource model
-    - Semantic or data collecting
-- Edges
-    - Relationships between nodes.
-    - In some cases has a relationship with its parent defined
+- Arches models business data as "graphs"
+- There are two kinds of "graphs" in Arches:
+    - Resource Models
+        - The blueprint of a resource instance
+        - Conceptually similar to a class in an object-oriented programming language
+        - Composed of a root node and one or more branches
+    - Branches
+        - Building blocks of a resource model
+        - Generally composed of nodes of a particular theme
+        - Nodes on a branch that share the same parent comprise a Nodegroup
+    
+---
+
+## Graphs
+
+- Graphs are comprised of:
+    - Nodes
+        - The smallest unit of a resource model
+        - Semantic or data collecting
+    - Edges
+        - Relationships between nodes.
+        - In some cases has a relationship with its parent defined
 
 ---
 
@@ -111,20 +125,12 @@ PostgreSQL.
 
 ## Datatypes
 
-Define how data are managed for a given node; some examples include:
-
-- String
-- Number
-- Boolean
-- Date
-- Concept
-- Domain
-- GeoJson
-
-Datatypes are responsible for all backend operations, including:
-- Validating values prior to save
-- Indexing and searching for values in Elasticsearch
-- Transforming data on import and export
+- Datatypes define how data are managed for a given node
+- For example: strings, numbers, dates, etc.
+- Datatypes are responsible for all backend operations, including:
+    - Validating values prior to save
+    - Indexing and searching for values in Elasticsearch
+    - Transforming data on import and export
 
 ---
 
@@ -180,3 +186,26 @@ Datatypes are responsible for all backend operations, including:
     - Resource models and branches
     - Custom cards, datatypes, widgets, report templates
 - In contrast, a ***Project*** is essentially a Django `project`.
+
+---
+
+## Working in class - dependencies
+
+- You are expected to have the dependencies outlined [here](https://arches.readthedocs.io/en/stable/requirements-and-dependencies/) installed as well as [Arches](https://arches.readthedocs.io/en/stable/installation/)
+- You'll also need a git client and a text editor; we recommend [Atom](https://atom.io/)
+- If you don't have these installed already, you may want to follow along with a classmate today and install them before tomorrow's class
+
+---
+
+## Working in class - project
+
+- throughout the class, we'll be doing development in an Arches project stored in a GitHub repository
+- to set up your local environment, clone the repository at [`archesproject/arches-dev-training-project`](https://github.com/archesproject/arches-dev-training-project) on GitHub:
+```bash
+git clone https://github.com/archesproject/arches-dev-training-project.git
+```
+- ...then install packages and build the your starter database like so **(with the virtual environment activated where you installed Arches)**:
+```bash
+yarn install
+python manage.py packages -o setup_db
+```

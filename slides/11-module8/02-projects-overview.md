@@ -4,9 +4,15 @@
 - You can update html to modify web page branding, and add functions, datatypes, and widgets to introduce new functionality
 - A project sits outside of your virtual environment, and can thus be transferred to any other system where Arches is installed
 - The templates directory holds HTML templates that you can modify to customize the branding and general appearance of your project.
+
+---
+
+## Project Settings
+
 - Many project-specific settings are defined in `settings.py`
 - You should use `settings_local.py` to store variables that you may want to keep out of the public eye (db passwords, API keys, etc.).
 - Contains your site specific Django settings
+- Settings from Arches are inherited and can be overridden by projects and packages:
 
 ```
 Project Settings
