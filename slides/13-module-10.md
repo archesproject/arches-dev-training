@@ -1,7 +1,7 @@
 <!-- sectionTitle: Module 10: Creating a Package -->
 
 # Module 10
-## Introduction to Components in Arches
+## Packaging it all up
 
 ---
 
