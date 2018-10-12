@@ -17,9 +17,8 @@
 ## Widget review
 
 - A widget is the UI representation of a node
-- They can be assigned to nodes with a datatype (not semantic)
-- A datatype may have more than one possible widget, and
-every datatype in Arches has at least one:
+- They can be assigned to nodes with a datatype specified in the widget record
+- A datatype may have more than one possible widget:
     - string : input/rich text
     - boolean : radio/switch
     - concept : radio/dropdown
@@ -78,14 +77,13 @@ In the template, each widget has a dedicated block for each of these roles.
 `arches/app/media/js/viewmodels/widget.js`
 
 This makes some properties immediately available as ko observables
-- `configs`
-- `default value`
-- `widget label`
+- configurations
+    - `params.configKeys = []`
+- `defaultValue`
+- `label`
 - `value`
-- `value properties` (if your data is a simple object)
-
-`params.valueProperties = []`  //A list of object properties from your datatype
-`params.configKeys = []`  //A list of your widget's default configs
+- value properties (if your data is a simple object)
+    - `params.valueProperties = []`
 
 ---
 
@@ -173,9 +171,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ## Lab Overview
 
-We need a widget that will get an address from a geocoding service
-
-- Catch everyone up to the end of the last lab
+Build a widget that will get an address from a geocoding service:
 - Define our widget configs for a geocoder widget
 - Update our widget's view model
 - Update our widget's template
