@@ -96,8 +96,7 @@ The address card component JSON (`card_components/address-card.json`):
 
 ---
 
-## Add a map to the card header
-### View model
+## Add a map to the card header - View model
 
 ```js
 if (self.tile) {
@@ -119,17 +118,18 @@ if (self.tile) {
 
 ---
 
-## Add a map to the card header
-### Template
+## Add a map to the card header - Template
 
 ```HTML
-{{ block.super }}
-<div class="address-card-map" data-bind="mapboxgl: {
-    mapOptions: {
-        style: 'mapbox://styles/mapbox/streets-v9'
-    },
-    afterRender: setupMap
-}"></div>
+{% block form_header %}
+    {{ block.super }}
+    <div class="address-card-map" data-bind="mapboxgl: {
+        mapOptions: {
+            style: 'mapbox://styles/mapbox/streets-v9'
+        },
+        afterRender: setupMap
+    }"></div>
+{% endblock form_header %}
 ```
 
 ---
@@ -138,10 +138,10 @@ if (self.tile) {
 
 ---
 
-## Add form for map icon
-### Template
+## Add form for map icon - Template
 
 ```HTML
+{% block config %}
 <div class="node-config-item">
     <div class="control-label">
         {% trans "Icon" %}
@@ -166,6 +166,7 @@ if (self.tile) {
         }">
     </div>
 </div>
+{% endblock config %}
 ```
 
 ---
