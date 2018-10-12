@@ -134,11 +134,11 @@ if (self.tile) {
 
 ---
 
-## Add form for map icon (demo)
+## Add a form for map icon (demo)
 
 ---
 
-## Add form for map icon - Template
+## Add a form for map icon - Template
 
 ```HTML
 {% block config %}
