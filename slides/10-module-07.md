@@ -134,12 +134,11 @@ In the mapboxgl binding handler:
 
 ---
 
-## Template Header Config Form
+### Template Header Config Form
 
-`/templates/views/components/reports/address-report.htm`
-
-1. Add the icon parameter to your templates select2Query binding handler
-2. Add more icon options to the select2 config
+- `/templates/views/components/reports/address-report.htm`
+    1. Add the icon parameter to your templates select2Query binding handler
+    2. Add more icon options to the select2 config
 
 ```html
 {% block header_form %}
@@ -237,10 +236,10 @@ self.icon.subscribe(function(icon) {
 
 ## Register our Report
 
+- To register your report template with Arches, run the following:
+
 ```bash
 $(env) python manage.py report register -s arches_dev_training/reports/address-report.json
 ```
 
----
-
-## Now we can assign our report to our resource model
+- Now we can assign our report to the Person resource model
