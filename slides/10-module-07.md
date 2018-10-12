@@ -33,8 +33,30 @@ of a resource instance is selected
     - image header
     - map header
 - The default template is also the base report template
+- The sections of the report that you are likely to override are the  
+header and the header configuration form.
+- The body of the report is largely driven by the card component
 
 ---
+
+## Report properties
+
+`/reports/address-report.json`
+
+```json
+{
+    "name": "Address Report",
+    "description": "",
+    "component": "views/components/reports/address-report",
+    "componentname": "address-report",
+    "defaultconfig": {
+        "icon": "star-15"
+    }
+}
+```
+
+---
+
 
 ## Base Report Template (abridged)
 
@@ -69,6 +91,8 @@ of a resource instance is selected
 
 
 ## Update our template header
+
+`/templates/views/components/reports/address-report.htm`
 
 In the mapboxgl binding handler:
 1. We need to add a style definition
@@ -110,7 +134,9 @@ In the mapboxgl binding handler:
 
 ---
 
-## Update our template header config form
+## Template Header Config Form
+
+`/templates/views/components/reports/address-report.htm`
 
 1. Add the icon parameter to your templates select2Query binding handler
 2. Add more icon options to the select2 config
@@ -140,7 +166,11 @@ In the mapboxgl binding handler:
 
 ---
 
-## Template header config form
+## Template Header Config Form Demo
+
+---
+
+## Template Header Config Form
 
 ```diffko
 
@@ -172,3 +202,45 @@ In the mapboxgl binding handler:
 </div>
 {% endblock header_form %}
 ```
+
+---
+
+## Update the Report View Model
+
+`arches_dev_training/media/js/views/components/reports/address-report.js`
+
+In its current state the map does not update when address are added or the icon is changed.  
+We need to provide handlers to support dynamically updating these features.
+
+---
+
+## Report View Model Demo
+
+---
+
+## Report View Model
+
+At the bottom of `this.setupMap`:
+
+```javascript
+self.geoJSON.subscribe(function(geoJSON) {
+    map.getSource('address-points').setData(geoJSON);
+    zoomToGeoJSON(geoJSON);
+});
+
+self.icon.subscribe(function(icon) {
+    map.setLayoutProperty('address-points', 'icon-image', icon);
+});
+```
+
+---
+
+## Register our Report
+
+```bash
+$(env) python manage.py report register -s arches_dev_training/reports/address-report.json
+```
+
+---
+
+## Now we can assign our report to our resource model
