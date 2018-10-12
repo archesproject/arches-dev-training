@@ -75,3 +75,107 @@ As with widgets, this view model provides some observables by default
 
 ---
 
+## Adding an address card component
+
+The address card component JSON (`card_components/address-card.json`):
+```json
+{
+    "name": "Address Card",
+    "description": "",
+    "component": "views/components/card_components/address-card",
+    "componentname": "address-card",
+    "defaultconfig": {
+        "icon": "star-15"
+    }
+}
+```
+
+---
+
+## Add a map to the card header (demo)
+
+---
+
+## Add a map to the card header
+### View model
+
+```js
+if (self.tile) {
+    _.each(koMapping.toJS(self.tile.data), function(value) {
+        if (value && value.address && value.x && value.y) {
+            geoJSON.features.push({
+                'properties': {
+                    'address': value.address
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [value.x, value.y]
+                }
+            });
+        }
+    });
+}
+```
+
+---
+
+## Add a map to the card header
+### Template
+
+```HTML
+{{ block.super }}
+<div class="address-card-map" data-bind="mapboxgl: {
+    mapOptions: {
+        style: 'mapbox://styles/mapbox/streets-v9'
+    },
+    afterRender: setupMap
+}"></div>
+```
+
+---
+
+## Add form for map icon (demo)
+
+---
+
+## Add form for map icon
+### Template
+
+```HTML
+<div class="node-config-item">
+    <div class="control-label">
+        {% trans "Icon" %}
+    </div>
+    <div>
+        <input style="padding-bottom: 5px;" data-bind="select2Query: {
+            select2Config: {
+                value: icon,
+                data: {
+                    results: [{
+                        text: 'Star',
+                        id: 'star-15'
+                    }, {
+                        text: 'Circle',
+                        id: 'circle-15'
+                    }, {
+                        text: 'Triangle',
+                        id: 'triangle-15'
+                    }]
+                }
+            }
+        }">
+    </div>
+</div>
+```
+
+---
+
+---
+
+## Registering the card component
+
+- Register the card component using the following command:
+```bash
+$(env) python manage.py card_component register -s arches_dev_training/card_components/address-card.json
+```
+- Now you can assign the card component to the Address card of the Person model in the designer UI

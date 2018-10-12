@@ -51,6 +51,23 @@ python manage.py packages -o add_mapbox_layer -j /path/to/mapbox_style.json -n "
 
 ---
 
+## Custom map markers
+
+- Custom map marker images can be added from the admin interface
+- Map markers consist of a name (unique, no spaces), and a URL
+- for example, if you had a custom marker image called `"custom-marker"`, your layer JSON might look like this:
+```json
+{
+    "id": "markers",
+    "type": "symbol",
+    "source": "markers",
+    "layout": {
+      "icon-image": "custom-marker"
+    }
+}
+```
+---
+
 ## Adding basemaps from external services
 
 - add the basemap from Mapbox by running the following: 
