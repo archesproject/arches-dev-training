@@ -51,6 +51,23 @@ python manage.py packages -o add_mapbox_layer -j /path/to/mapbox_style.json -n "
 
 ---
 
+## Custom map markers
+
+- Custom map marker images can be added from the admin interface
+- Map markers consist of a name (unique, no spaces), and a URL
+- for example, if you had a custom marker image called `"custom-marker"`, your layer JSON might look like this:
+```json
+{
+    "id": "markers",
+    "type": "symbol",
+    "source": "markers",
+    "layout": {
+      "icon-image": "custom-marker"
+    }
+}
+```
+---
+
 ## Adding basemaps from external services
 
 - add the basemap from Mapbox by running the following: 
@@ -68,13 +85,30 @@ python manage.py packages -o add_mapbox_layer \
 
 ---
 
+## Adding basemaps from external services (demo)
+
+---
+
+## Map tiles
+
+- **Not to be confused with Arches `tiles`**
+- On the web, map data is usually served up in tiles
+- Tiles are squares of a map prepared for a certain resolution meant to fit together
+- Tiles are nice because they allow a client to load just the map they need
+- Traditionally, map tiles on the web were images (raster)
+
+---
+
 ## Vector Tiles
 
-- Vector tiles are a concept as well as a spec purpose fit for this concept
-- conceptually, vector tiles are a way of serving up map data as vectors, sub-divided into "tiles"
-- traditionally, map tiles on the web were images
+- Vector tiles are map tiles that contain vector data
 - [Mapbox created a spec](https://www.mapbox.com/vector-tiles/specification/) (now widely adopted, including by Esri) to provide highly compressed vector tiles
 - Mapbox Gl JS was built to work with Vector tiles (though it can also display raster tiles)
+- Vector tiles are great for web maps because they:
+    - are highly compressed
+    - can be styled on the client
+    - allow for interactivity
+    - are tiles! (lightweight, cacheable, well-defined)
 - You can find a list of [great tools for working with vector tiles here](https://github.com/mapbox/awesome-vector-tiles)
 
 ---
