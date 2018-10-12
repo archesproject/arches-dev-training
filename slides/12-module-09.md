@@ -199,5 +199,5 @@ Tuning your map layers can become difficult at scale, so keep some of these warn
 - caching can speed up the loading of tiles for users, but may slow down updating data
 - clustering at high zoom levels with large amounts of data can cause issues; it may help to disable clustering entirely in favor of custom styling
 - it may be necessary with some datasets to use an external tileserver, as there are some issues with TileStache 
-    - GeoServer may be a nice simple option (good UI)
+    - [GeoServer](http://geoserver.org/) may be a nice simple option (good UI)
     - other options can be found [here](https://github.com/mapbox/awesome-vector-tiles)
