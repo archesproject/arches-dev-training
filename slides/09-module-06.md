@@ -171,8 +171,6 @@ if (self.tile) {
 
 ---
 
----
-
 ## Registering the card component
 
 - Register the card component using the following command:
