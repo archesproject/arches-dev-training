@@ -25,8 +25,8 @@
 
 ## The role of components
 
-- **Widgets:**  the UI for a tile
-- **Card components:**  the UI for a collection of widgets (or a collection of cards)
+- **Widgets:**  the UI for a node
+- **Card components:**  the UI for a node group or collection of widgets
 - **Reports:**  the UI for a resource report header and the display of cards
 - **Functions:**  the UI for function configuration (not covered in this course)
 
@@ -66,10 +66,7 @@ ko.components.register('some-component', {
 });
 ```
 
-Arches handles this for you. You simply have to write the files and place where
-Arches can find them.
-
-So, where should you place them?
+Where should you place your component files?
 
 ---
 
@@ -147,10 +144,30 @@ $(env) python manage.py card_component register -s myproject/card_components/add
 
 ---
 
+## Checking if your component is registered
+
+```bash
+$(env) python manage.py widget list
+$(env) python manage.py report list
+$(env) python manage.py card_component list
+```
+
+---
+
+## Updating your component
+
+```bash
+$(env) python manage.py widget update -s myproject/widgets/geocoder.json
+$(env) python manage.py report update -s myproject/reports/address.json
+$(env) python manage.py card_component update -s myproject/card_components/address.json
+```
+
+---
+
 ## Unregistering components
 
 - Components can be unregistered from Arches as below:
-- (A component's `name` is unique in Arches and is used as it's identifier)
+- (A component's `name` is unique in Arches and is used as its identifier)
 
 ```bash
 $(env) python manage.py widget unregister -n 'geocoder'
