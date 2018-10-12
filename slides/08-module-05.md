@@ -100,6 +100,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
     });
 });
 ```
+
 ---
 
 ## The widget manager - config_form
