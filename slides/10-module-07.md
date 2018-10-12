@@ -18,7 +18,6 @@
 We need a report to render a map with a resource's addresses
 
 - Catch everyone up to the end of the last lab
-- Define our widget configs for a geocoder widget
 - Update our report's view model
 - Update our report's template
 - Register our report in Arches
