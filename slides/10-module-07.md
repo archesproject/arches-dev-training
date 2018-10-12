@@ -24,6 +24,21 @@ We need a report to render a map with a resource's addresses
 
 ---
 
+## Getting caught up
+
+```
+git checkout module-7
+python manage.py packages -o setup_db
+python manage.py widget register -s arches_dev_training/widgets/geocoder.json
+python manage.py datatype register -s arches_dev_training/datatypes/address.py
+python manage.py packages -o import_graphs -s arches_dev_training/graphs/Person.json
+python manage.py packages -o import_business_data -s arches_dev_training/data/Person.json -ow overwrite
+
+python manage.py card_component register -s arches_dev_training/card_components/address-card.json
+```
+
+---
+
 ## Report Review
 
 - Reports display data in the report page as well when the root node  
