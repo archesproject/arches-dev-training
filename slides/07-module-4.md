@@ -25,8 +25,8 @@
 
 ## The role of components
 
-- **Widgets:**  the UI for a tile
-- **Card components:**  the UI for a collection of widgets (or a collection of cards)
+- **Widgets:**  the UI for a node
+- **Card components:**  the UI for a node group or collection of widgets
 - **Reports:**  the UI for a resource report header and the display of cards
 - **Functions:**  the UI for function configuration (not covered in this course)
 
