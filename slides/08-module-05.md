@@ -10,7 +10,7 @@
 - Review what widgets are in Arches
 - Where are widgets used in Arches
 - What are the basic building blocks of a widget
-- Lab - create a geocder widget
+- Lab - create a geocoder widget for the address datatype
 
 ---
 
@@ -330,9 +330,11 @@ $(env) python manage.py widget register -s arches_dev_training/widgets/geocoder.
 
 ---
 
-## Making the geocoder the default widget for the address datatype
+### Making the geocoder the default widget for the address datatype
 
 ```python
+from arches.app.models import models
+
 geocoder = models.Widget.objects.get(name='geocoder')
 
 details = {
