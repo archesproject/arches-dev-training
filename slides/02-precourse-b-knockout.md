@@ -7,7 +7,7 @@
 ---
 
 
-## Lesson Overview
+## Lesson overview
 
 In this lesson we will briefly discuss each of the following Knockout concepts with examples and an explanation of how they are used in Arches
 
@@ -20,7 +20,7 @@ In this lesson we will briefly discuss each of the following Knockout concepts w
 
 ---
 
-## Lesson Goals
+## Lesson goals
 
 To gain a basic understanding of what KnockoutJS is and how the framework is used in Arches
 
@@ -28,8 +28,8 @@ To gain a basic understanding of what KnockoutJS is and how the framework is use
 
 ## What is Knockout?
 - JavaScript library for building web applications
-- [Documentation can be found here](https://knockoutjs.com/documentation/introduction.html)
-- [There are also some good tutorials](http://learn.knockoutjs.com/)
+- Documentation can be found here: https://knockoutjs.com/documentation/introduction.html
+- There are also some good tutorials: http://learn.knockoutjs.com/
 - Easy to learn
 - Non-prescriptive regarding application architecture
 - Simple to extend with custom bindings
@@ -47,7 +47,7 @@ MVVM is a design pattern for building complex applications. KnockoutJS uses this
 
 ---
 
-## A very simple View Model
+## A very simple view model
 
 ```css
 .output {
@@ -92,14 +92,14 @@ ko.applyBindings(new ViewModel());
 
 ---
 
-## Subscriptions & Computeds
+## Subscriptions & computeds
 
 - Subscription - calls a handler when a single observable changes
 - Computeds - a function that returns a value if an observable within it changes
 
 ---
 
-## Subscriptions & Computeds: View Model
+## Subscriptions & computeds: view model
 
 ```javascript
 var self = this;
@@ -130,7 +130,7 @@ this.lastChange = ko.computed(function() {
 
 ---
 
-## Subscriptions & Computeds: HTML
+## Subscriptions & computeds: HTML
 
 We can bind to our computed, as we would with an observable:
 
@@ -167,7 +167,7 @@ We can bind to our computed, as we would with an observable:
 
 ## Components
 
-- Composed of a template and a view model
+- Composed of a template and view model
 - Reusable within an application
 - Registering a component:
 ```javascript
@@ -224,7 +224,7 @@ Different components can be used to represent the same data differently:
 
 ---
 
-## Reusing Components
+## Reusing components
 
 Components can be reused within an application with different data & configurations:
 
