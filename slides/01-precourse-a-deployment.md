@@ -7,11 +7,11 @@
 
 ## Lesson Overview
 
-In this module we will briefly discuss hosting considerations for Arches 
+In this module we will briefly discuss hosting considerations for Arches
 deployment, a few of the decision points, and provide abundant links for further
-research and exploration. 
+research and exploration.
 
-#### Topics: 
+#### Topics:
 -   Deployment Considerations
 -   Platform Options
 -   High Usage optimization options
@@ -63,7 +63,7 @@ research and exploration.
 
 ## Platform Options: Operating System
 
-All platforms require specific knowledge and experience to maintain. 
+All platforms require specific knowledge and experience to maintain.
 
 Each platform has both positives and negatives associated with them.
 
@@ -85,11 +85,11 @@ Each platform has both positives and negatives associated with them.
 -   Apache:
     -   Traditional Open Source Web Server
     -   Everything and the kitchen sink
-    -   [Serving Arches with Apache](https://arches.readthedocs.io/en/stable/serving-arches-with-apache/) 
+    -   [Serving Arches with Apache](https://arches.readthedocs.io/en/stable/serving-arches-with-apache/)
 -   Nginx:
     -   Currently used with provided Docker-Compose
     -   New. Lean. Small.
-    -   [Serving django with nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04) 
+    -   [Serving django with nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04)
 -   IIS (Windows only):
     -   Currently must be used when installing on Arches on Windows
 
@@ -120,7 +120,7 @@ Each Cloud Service has both positives and negatives associated with them.
     -   Arches supports the loading of Packages into Projects. Host the Package in a git repo and use the [`load_package`](https://arches.readthedocs.io/en/stable/command-line-reference/#loading-a-package-into-a-project) command.
 -   Back up. Back up. Back up.
 -   Ensure PostgreSQL is properly setup and tuned with sufficient security settings.
--   Ensure [sending of emails](https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/#email-backend-and-related-settings) has been configured correctly 
+-   Ensure [sending of emails](https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/#email-backend-and-related-settings) has been configured correctly
 -   Set up monitoring. On AWS, See [Cloudwatch](https://aws.amazon.com/cloudwatch/)
 
 ---
@@ -128,9 +128,7 @@ Each Cloud Service has both positives and negatives associated with them.
 ## Optimization for Deployment
 
 -   PostgreSQL
-    -   Setup Logging, Autovacuuming, tweak `work_mem`. Consider running a Hosted PostgreSQL setup to avoid too much tweaking. 
--   Projects/Packages:
-    -   Arches supports the loading of Packages into Projects. Host the Package in a git repo and use the [`load_package`](https://arches.readthedocs.io/en/stable/command-line-reference/#loading-a-package-into-a-project) command.
+    -   Setup Logging, Autovacuuming, tweak `work_mem`. Consider running a Hosted PostgreSQL setup to avoid too much tweaking.
 -   Set up and tune [django caching](https://docs.djangoproject.com/en/1.11/topics/cache/) through testing.
 
 ---
@@ -146,7 +144,7 @@ Each Cloud Service has both positives and negatives associated with them.
 
 ## Deployment Takeaways
 
--   Every deployment is different. 
+-   Every deployment is different.
     -   There are a lot of decisions to be made regarding production deployments, ranging from usage, redundancy requirements, to the complexity of resource models.
 -   The Arches Development Team typically follows the following patterns:
     -   Cloud Hosting solution unless your organization requires In House hosting
@@ -166,5 +164,5 @@ Django on AWS:
 Using AWS S3:
 -   [Storing Media on AWS S3 (Arches Wiki)](https://github.com/archesproject/arches/wiki/Storing-Media-on-AWS-S3)
 -   [Deleting S3 assets for Arches (Arches Forum)](https://groups.google.com/forum/#!topic/archesproject/QHKqMISRkV8)
-Monitoring: 
+Monitoring:
 -   [Setup django with AWS Cloudwatch](http://www.kidstrythisathome.com/2017/03/django-logging-with-aws-cloudwatch-and-watchtower.html)
