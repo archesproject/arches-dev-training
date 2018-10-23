@@ -22,7 +22,7 @@ research and exploration.
 
 ## Deployment considerations:
 -   What are the organizational specific considerations?
-    -   Are there institutional hosting requirements? Is in-house hosting required? Is there sufficient in-house resources to manage an in-house solution? Is there existing in-house expertise in hosting?
+    -   Are there institutional hosting requirements? Is in-house hosting required? Are there sufficient in-house resources to manage an in-house solution? Is there existing in-house expertise in hosting?
     -   Is there existing in-house experience with a specific cloud? AWS? Azure?
 -   How much usage is expected?
     -   How many people will be searching? editing? creating reports?
@@ -34,11 +34,11 @@ research and exploration.
 
 ## Platform Options: Location
 
--   In House:
+-   In-house:
     -   Requires managing physical servers and networking infrastructure
-    -   Requires higher quality internet connection to the server
+    -   Requires higher quality Internet connection to the server
     -   Less flexible to grow with increase in usage
-    -   Often has a fixed up front cost
+    -   Often has a fixed upfront cost
 -   Cloud Hosting:
     -   Requires managing virtual servers
     -   Requires specific training for different cloud platforms
@@ -51,7 +51,7 @@ research and exploration.
 
 -   Single Server:
     -   Simple deployment and setup
-    -   Allows all Arches dependancies to be easily accessible on one server
+    -   Allows all Arches dependencies to be easily accessible on one server
     -   Less flexible to grow with increase in usage
 -   Distributed Architecture:
     -   More complex deployment and setup
@@ -147,7 +147,7 @@ Each Cloud Service has both positives and negatives associated with them.
 -   Every deployment is different.
     -   There are a lot of decisions to be made regarding production deployments, ranging from usage, redundancy requirements, to the complexity of resource models.
 -   The Arches Development Team typically follows the following patterns:
-    -   Cloud Hosting solution unless your organization requires In House hosting
+    -   Cloud Hosting solution unless your organization requires in-house hosting
     -   Distributed Architecture provides a more robust ability to expand with usage and re-use resources.
     -   Linux/Docker allows quick deployment and dependancies that have been tested to work.
     -   AWS is the cloud that is most widely used among the Development Team.
@@ -158,11 +158,14 @@ Each Cloud Service has both positives and negatives associated with them.
 ## Further Reading
 
 Django on AWS:
--   [Deploy a highly available Python Web App on AWS](https://aws.amazon.com/getting-started/projects/deploy-python-application/)
--   [Deploying a Django app on Amazon EC2 instance (includes autoscaling and load balancing)](https://www.agiliq.com/blog/2014/08/deploying-a-django-app-on-amazon-ec2-instance/)
--   [Scaling django on AWS](https://www.scribd.com/doc/54883641/Scaling-Django-Apps-With-Amazon-AWS)
+-  [Deploy a highly available Python Web App on AWS](https://aws.amazon.com/getting-started/projects/deploy-python-application/)
+-  [Deploying a Django app on Amazon EC2 instance  
+(includes autoscaling and load balancing)](https://www.agiliq.com/blog/2014/08/deploying-a-django-app-on-amazon-ec2-instance/)
+-  [Scaling django on AWS](https://www.scribd.com/doc/54883641/Scaling-Django-Apps-With-Amazon-AWS)  
+
 Using AWS S3:
--   [Storing Media on AWS S3 (Arches Wiki)](https://github.com/archesproject/arches/wiki/Storing-Media-on-AWS-S3)
--   [Deleting S3 assets for Arches (Arches Forum)](https://groups.google.com/forum/#!topic/archesproject/QHKqMISRkV8)
+-  [Storing Media on AWS S3 (Arches Wiki)](https://github.com/archesproject/arches/wiki/Storing-Media-on-AWS-S3)
+-  [Deleting S3 assets for Arches (Arches Forum)](https://groups.google.com/forum/#!topic/archesproject/QHKqMISRkV8)  
+
 Monitoring:
--   [Setup django with AWS Cloudwatch](http://www.kidstrythisathome.com/2017/03/django-logging-with-aws-cloudwatch-and-watchtower.html)
+-  [Setup django with AWS Cloudwatch](http://www.kidstrythisathome.com/2017/03/django-logging-with-aws-cloudwatch-and-watchtower.html)
