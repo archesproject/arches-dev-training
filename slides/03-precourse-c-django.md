@@ -23,9 +23,9 @@ In this lesson we will briefly discuss each of the following Django concepts wit
 
 ## Lesson Goals
 
-To have a basic understanding of Django and how the framework is applied in Arches
+To have a basic understanding of Django and how the framework is applied in Arches.
 
-Django has a great tutorial, but it take longer than this session.
+Django has a great tutorial, but it would take longer than this session.
 However, if you're new to Django, it would
 be worth the time to do it.
 
@@ -144,7 +144,7 @@ urlpatterns = [
 ]
 ```
 
-For example, if you server is running at localhost:8080, an example of the above URL would look like this:
+For example, if you server is running at localhost:8000, an example of the above URL would look like this:
 
 http://localhost:8000/graph_designer/ccbd1537-ac5e-11e6-84a5-026d961c88e6
 
@@ -158,7 +158,7 @@ An example template:
 ```html
 <ul>
 {% for datatype in datatypes %}
-    <li>{{datatype.datatype}}</li>
+    <li>{{datatype.name}}</li>
 {% endfor %}
 </ul>
 ```
@@ -197,13 +197,25 @@ Application configuration:
 DEBUG = True
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'arches',
+        'USER': 'postgres',
+        'PASSWORD': 'postgis',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'POSTGIS_TEMPLATE': 'template_postgis_20',
     }
 }
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
 ```
+
+You can override settings in a local_settings.py file.  
 
 ---
 
@@ -246,7 +258,9 @@ app/
     views.py
 ```
 
-The Admin page is a good example of a Django app.
+The Admin page is a good example of a Django app:
+
+http://localhost:8000/admin
 
 ---
 
