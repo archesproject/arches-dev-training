@@ -98,6 +98,8 @@ The address card component JSON (`card_components/address-card.json`):
 
 ## Add a map to the card header - View model
 
+`media/js/views/components/card_components/address-card.js`
+
 ```js
 if (self.tile) {
     _.each(koMapping.toJS(self.tile.data), function(value) {
@@ -119,6 +121,8 @@ if (self.tile) {
 ---
 
 ## Add a map to the card header - Template
+
+`templates/views/components/card_components/address-card.htm`
 
 ```HTML
 {% block form_header %}

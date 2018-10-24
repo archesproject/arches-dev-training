@@ -23,7 +23,7 @@
     - boolean : radio/switch
     - concept : radio/dropdown
     - etc...
-- As components widgets consist of front-end code only
+- As widgets are just a type of component, they consist of front-end code only
     - view model
     - template
 
@@ -196,7 +196,7 @@ python manage.py packages -o import_business_data -s arches_dev_training/data/Pe
 
 ## Defining our widget properties in the .json file
 
-arches_dev_training/widgets/geocoder.json
+`arches_dev_training/widgets/geocoder.json`
 
 ```javascript
 {
@@ -232,7 +232,7 @@ Add the rest of the widget's properties
 
 ## Update our view model
 
-arches_dev_training/media/js/views/components/widgets/geocoder.js
+`arches_dev_training/media/js/views/components/widgets/geocoder.js`
 
 1. The widget's view model need the following parameter properties assigned:  
 `params.valueProperties =`  

@@ -9,7 +9,7 @@
 
 - Learn the basics about how Arches creates dynamic maps with Mapbox GL JS
 - Learn the basics about how Arches serves tiles via TileStache
-- Learn about how to add new overlays and basemaps in archesproject
+- Learn about how to add new overlays and basemaps in an arches project
     - from external services using mapbox style json
     - from local PostGIS data using TileStache
 - Learn how to add interactivity to custom layers
@@ -70,13 +70,13 @@ python manage.py packages -o add_mapbox_layer -j /path/to/mapbox_style.json -n "
 
 ## Adding basemaps from external services
 
-- add the basemap from Mapbox by running the following: 
+- add the basemap from Mapbox by running the following:
 ```bash
 python manage.py packages -o add_mapbox_layer \
 -j arches_dev_training/map_layers/mapbox_spec_json/basemaps/decimal.json \
 -n "Decimal" -b
 ```
-- add the basemap from Ordinance Survey by running the following: 
+- add the basemap from Ordinance Survey by running the following:
 ```bash
 python manage.py packages -o add_mapbox_layer \
 -j arches_dev_training/map_layers/mapbox_spec_json/basemaps/os-zoomstack-outdoor.json \
@@ -232,6 +232,6 @@ create or replace view addresses as
 Tuning your map layers can become difficult at scale, so keep some of these warnings in mind:
 - caching can speed up the loading of tiles for users, but may slow down updating data
 - clustering at high zoom levels with large amounts of data can cause issues; it may help to disable clustering entirely in favor of custom styling
-- it may be necessary with some datasets to use an external tileserver, as there are some issues with TileStache 
+- it may be necessary with some datasets to use an external tileserver, as there are some issues with TileStache
     - [GeoServer](http://geoserver.org/) may be a nice simple option (good UI)
     - other options can be found [here](https://github.com/mapbox/awesome-vector-tiles)
