@@ -62,7 +62,7 @@ Knockout loads components from separate files asynchronously using require.js
 ```javascript
 ko.components.register('some-component', {
     viewModel: { require: 'files/some-component' },
-    template: { require: 'text!files/some-component.html' }
+    template: { require: 'text!files/some-component.htm' }
 });
 ```
 
@@ -74,9 +74,9 @@ Where should you place your component files?
 
 - Example template files:
 ```
-/templates/views/components/card_components/address-card.html
-/templates/views/components/reports/address-report.html
-/templates/views/components/widgets/geocoder.html
+/templates/views/components/card_components/address-card.htm
+/templates/views/components/reports/address-report.htm
+/templates/views/components/widgets/geocoder.htm
 ```
 
 - Example javascript files:
@@ -88,10 +88,10 @@ Where should you place your component files?
 
 - The html and js file base names should match:
 
-| Javscript          |   HTML                |
+| JavaScript          |   HTML                |
 |:------------------:|:---------------------:|
-| address-card.js    |   address-card.html   |
-| address-report.js  |   address-report.html |
+| address-card.js    |   address-card.htm   |
+| address-report.js  |   address-report.htm |
 
 ---
 
@@ -101,8 +101,8 @@ Where should you place your component files?
     - `/card_components/address-card.json`
     - `/reports/address-report.json`
     - `/widgets/geocoder.json`
-- These can go anywhere in your project
-- Ultimately, these will typically be saved in a package
+- These can go anywhere in your project. There really is no convention their location
+as they will typically be saved in a package.
 
 ---
 

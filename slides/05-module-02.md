@@ -34,8 +34,8 @@
 
 - validate incoming data before saving values
 - transform values for import/export
-- index data to ElasticSearch
-- query data in ElasticSearch for advanced searching
+- index data to Elasticsearch
+- query data in Elasticsearch for advanced searching
 - handle incoming request objects (to save files, for example)
 - execute logic after data are saved
 - provides hooks for Arches native geospatial features
@@ -116,7 +116,7 @@ The `d_data_types` table has the following columns:
 - datatypes can also (optionally) include a Knockout component, used for:
     - configuring nodes to use a datatype
     - searching for values of a given datatype in advanced search
-    
+
 ---
 
 ### Example: BooleanDataType Python class
@@ -230,6 +230,6 @@ define(['knockout'], function(ko) {
 - you need to store data structures not currently supported in Arches
 - you need to implement custom logic for:
     - validation
-    - ElasticSearch indexing/querying
+    - Elasticsearch indexing/querying
     - import/export
     - handling requests

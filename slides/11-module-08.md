@@ -18,9 +18,9 @@
 ## Projects
 
 - Projects facilitate all of the customizations that you will need to make one installation of Arches different from the next
-- You can update html to modify web page branding, and add functions, datatypes, and widgets to introduce new functionality
+- You can update html, styles, and images to modify web page appearance
+- The templates directory holds HTML templates that you can override to customize your application
 - A project sits outside of your virtual environment, and can thus be transferred to any other system where Arches is installed
-- The templates directory holds HTML templates that you can modify to customize the branding and general appearance of your project.
 
 ---
 
@@ -30,12 +30,8 @@
 - You should use `settings_local.py` to store variables that you may want to keep out of the public eye (db passwords, API keys, etc.).
 - Contains your site specific Django settings
 - Settings from Arches are inherited and can be overridden by projects and packages:
-
-```
-Project Settings
-├── Package Settings
-     ├── Core Arches Settings
-```
+- There is an explanation of setting hierarchy in readthedocs:
+    - https://arches.readthedocs.io/en/latest/settings-beyond-the-ui/
 
 ---
 
@@ -77,16 +73,16 @@ Example Project
 
 ## Packages
 
-- A package contains all the data you'd like loaded into your Arches implementation
-    - business data
+- A package contains all the `data` you'd like loaded into your Arches implementation
+    - business data (and postgres views)
     - concepts/reference data
     - resource models/branches
     - datatypes/functions/widgets
     - map layers
-- Each of these components can be loaded separately
-- The whole package can be loaded from local file system or directly from github
-- Also contains package specific settings (e.g. load order of business data, date format of business data)
-- A local package may be updated if you make changes in your deployment of Arches (eg changes to branches and/or resource models)
+
+- The whole package can be loaded from local file system or from github
+- Packages contain specific settings (e.g. business data load order and date format)
+- A local package may be updated if you make changes to your Arches instance
 
 ---
 

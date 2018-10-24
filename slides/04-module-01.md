@@ -57,7 +57,7 @@
     - Ask questions on the forum: https://groups.google.com/forum/#!forum/archesproject
     - Write a ticket on GitHub: https://github.com/archesproject/arches
 - Writing documentation:
-    - Documentation is in a dedicated repo
+    - Documentation is in a dedicated repo: https://github.com/archesproject/docs
     - Written in restructured text
     - Converted to HTML using Sphinx
 
@@ -73,15 +73,17 @@
     - Create your own fork with a branch for the ticket
     - Submit the pull request from your fork
 - Developer Code of Conduct
-    - Be respectful
-    - Use clean and inclusive language
+    - https://www.archesproject.org/code-of-conduct/
+    - Guidelines for Participation in Arches
+    - Guidelines for Commercial Entities and Others Deploying Arches
+    - Arches Trademark and Branding
 
 ---
 
 ## Graphs
 
-- Arches models business data as "graphs"
-- There are two kinds of "graphs" in Arches:
+- Arches models business data as `graphs`
+- There are two kinds of `graphs` in Arches:
     - Resource Models
         - The blueprint of a resource instance
         - Conceptually similar to a class in an object-oriented programming language
@@ -89,8 +91,8 @@
     - Branches
         - Building blocks of a resource model
         - Generally composed of nodes of a particular theme
-        - Nodes on a branch that share the same parent comprise a Nodegroup
-    
+        - Nodes on a branch that share the same parent compose a Nodegroup
+
 ---
 
 ## Graphs
@@ -108,18 +110,18 @@
 ## Resource Instances
 
 - Resource Model vs Resource Instance
-- Resource models often referred as `models`
+- Resource models often referred as `models` or `graphs`
 - Resource instances often referred to as `resources` or `instances`
 
 ---
 
 ## Elasticsearch
 
-The structure of business data in ElasticSearch is not exactly the same as in
+The structure of business data in Elasticsearch is not exactly the same as in
 PostgreSQL.
 
-- [elasticsearch-head](https://github.com/mobz/elasticsearch-head)
-- [elasticsearch-head chrome plugin](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm/)
+- [Elasticsearch-head](https://github.com/mobz/elasticsearch-head)
+- [Elasticsearch-head chrome plugin](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm/)
 
 ---
 
@@ -170,10 +172,11 @@ PostgreSQL.
 
 ## Managing dependencies
 
-- Python pip (requirements.txt and requirements-dev.txt)
-- Node/Yarn (you can add to these dependencies in you're projects package.json file)
-
-- For editing documentation you need  
+- Python pip (`requirements.txt` and `requirements_dev.txt`)
+- Node/Yarn (`package.json`)
+- Core JavaScript dependencies are loaded in `arches/app/templates/javascript.htm`
+- You can add to these dependencies in your project's `package.json` file
+- For editing documentation you need (already in `requirements_dev.txt`)
     - sphinx
     - sphinx-rtd-theme
 
