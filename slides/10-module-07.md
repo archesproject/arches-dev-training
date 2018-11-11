@@ -106,8 +106,7 @@ In the mapboxgl binding handler:
 <div class="address-report-map" data-bind="mapboxgl: {
     mapOptions: {
         style: ''
-    },
-    afterRender: function() {console.log('init map')}
+    }
 }"></div>
 {% endblock header %}
 ```
@@ -125,8 +124,8 @@ In the mapboxgl binding handler:
     mapOptions: {
 -        style: ''
 +        style: 'mapbox://styles/mapbox/streets-v9'
-    },
--    afterRender: function() {console.log('init map')}
+-    }
++    },
 +    afterRender: setupMap
 }"></div>
 {% endblock header %}
@@ -147,7 +146,7 @@ In the mapboxgl binding handler:
         {% trans "Icon" %}
     </div>
     <div>
-        <input style="padding-bottom: 5px;" data-bind="select2Query: {
+        <input data-bind="select2Query: {
             select2Config: {
                 value: '',
                 data: {
@@ -179,7 +178,7 @@ In the mapboxgl binding handler:
         {% trans "Icon" %}
     </div>
     <div>
-        <input style="padding-bottom: 5px;" data-bind="select2Query: {
+        <input data-bind="select2Query: {
             select2Config: {
 -               value: '',
 +               value: icon,

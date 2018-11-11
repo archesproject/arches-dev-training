@@ -151,7 +151,7 @@ if (self.tile) {
         {% trans "Icon" %}
     </div>
     <div>
-        <input style="padding-bottom: 5px;" data-bind="select2Query: {
+        <input data-bind="select2Query: {
             select2Config: {
                 value: icon,
                 data: {

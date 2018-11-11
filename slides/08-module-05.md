@@ -117,19 +117,19 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 {% block config_form %}
 <div class="control-label">{% trans "Placeholder" %}</div>
 <div class="col-xs-12 pad-no crud-widget-container">  
-    <input type="" placeholder="{% trans "Placeholder" %}" id="" class="form-control input-md widget-input"  
+    <input placeholder="{% trans "Placeholder" %}" class="form-control input-md widget-input"  
     data-bind="textInput: placeholder">
 </div>
 
 <div class="control-label">{% trans "Max Length" %}</div>
 <div class="col-xs-12 pad-no crud-widget-container">
-    <input type="" placeholder="{% trans "Max Length" %}" id="" class="form-control input-md widget-input"  
+    <input placeholder="{% trans "Max Length" %}" class="form-control input-md widget-input"  
     data-bind="textInput: maxLength">
 </div>
 
 <div class="control-label">{% trans "Default Value" %}</div>
 <div class="col-xs-12 pad-no crud-widget-container">
-    <input type="" placeholder="{% trans "Default Value" %}" id="" class="form-control input-md widget-input"  
+    <input placeholder="{% trans "Default Value" %}" class="form-control input-md widget-input"  
     data-bind="textInput: defaultValue">
 </div>
 {% endblock config_form %}
@@ -268,7 +268,7 @@ Bind the label observable to the label element:
     <div class="form-group">
         <label class="control-label widget-input-label" for=""></label>
         <div class="col-xs-12">
-            <input style="padding-bottom: 5px;" data-bind="select2Query: {select2Config: select2Config}">
+            <input data-bind="select2Query: {select2Config: select2Config}">
         </div>
     </div>
 </div>
@@ -303,7 +303,7 @@ Bind the placeholder observable to the placeholder config input:
     <div class="form-group">
         <label class="control-label widget-input-label" for="" data-bind="text:label"></label>
         <div class="col-xs-12">
-            <input style="padding-bottom: 5px;" data-bind="select2Query: {select2Config: select2Config}">
+            <input data-bind="select2Query: {select2Config: select2Config}">
         </div>
     </div>
 </div>
