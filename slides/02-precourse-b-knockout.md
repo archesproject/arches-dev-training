@@ -241,13 +241,6 @@ ko.components.register('album-count', {
 
 Components can be reused within an application with different data & configurations:
 
-```javascript
-ko.components.register('album-count', {
-    viewModel: AlbumListViewModel,
-    template: '<div><span data-bind="albums.length"></span> albums added</div>'
-});
-```
-
 ```html
 <div data-bind='component: {
     name: "album-list",
@@ -256,7 +249,7 @@ ko.components.register('album-count', {
 
 <div data-bind='component: {
     name: "album-list",
-    params: likedAlbums
+    params: oldAlbums
 }'></div>
 ```
 
