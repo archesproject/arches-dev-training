@@ -1,9 +1,9 @@
 self.__precacheManifest = [
   {
-    "url": "vendor.3.ec058a5cfd95c4478f56.css"
+    "url": "vendor.3.0b4529397504393b1351.css"
   },
   {
-    "url": "main.0.e394a6d715d15781d15e.css"
+    "url": "main.0.050cc83ab3f6ea103193.css"
   },
   {
     "url": "presenter.view.1.bf872c5162aaaf19281e.bundle.js"
@@ -18,16 +18,16 @@ self.__precacheManifest = [
     "url": "runtime.c6659fc66861905696e5.bundle.js"
   },
   {
-    "url": "vendor.3.ec058a5cfd95c4478f56.bundle.js"
+    "url": "vendor.3.0b4529397504393b1351.bundle.js"
   },
   {
     "url": "vendors~Sidebar.4.a2c260d84c17b4159f57.bundle.js"
   },
   {
-    "url": "main.0.e394a6d715d15781d15e.bundle.js"
+    "url": "main.0.050cc83ab3f6ea103193.bundle.js"
   },
   {
-    "revision": "598ab1eb9542c2d5212431a84f2af938",
+    "revision": "c114139230cfd77c3ad89e86c3cb9624",
     "url": "index.html"
   },
   {
