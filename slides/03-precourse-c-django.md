@@ -33,7 +33,6 @@ be worth the time to do it.
 
 ## What is Django?
 
-- "The web framework for perfectionists with deadlines"
 - Full-featured Python server-side web framework.
 - Strong documentation & community
 - Features:
@@ -43,8 +42,9 @@ be worth the time to do it.
     - Admin interface
     - Internationalization/Localization
     - Development server
-    - Support for spatial data
-    - Email/Messaging
+    - Support for spatial data types (GEOS, GDAL, Geometry/Geography datatypes)
+    - Email
+    - Caching
     - and more ...
 
 ---
@@ -59,6 +59,12 @@ virtualenv env
 source env/bin/activate
 pip install django
 ```
+
+---
+
+ORM (object relational mapper)
+- Database abstraction
+- Django allows raw SQL Queries
 
 ---
 
@@ -81,6 +87,57 @@ class DDataType(models.Model):
 
 ---
 
+## Proxy Models
+
+Extend the functionality of a model
+
+- Add new methods
+- Override existing methods
+
+---
+
+## ORM Queries
+
+- Graph.objects.all()  
+`SELECT * FROM graphs;`
+- Graph.objects.filter(name='Actor')  
+`SELECT * FROM graphs WHERE name = 'Actor';`
+- Graph.objects.exclude(name='Actor')  
+`SELECT * FROM graphs WHERE NOT (name = 'Actor' AND name IS NOT NULL);`
+
+- Graph.objects.filter(name__contains='Actor')  
+`SELECT * FROM graphs WHERE name LIKE '%Actor Resource Model%'`
+
+- Graph.objects.filter(Q(name__startswith='Actor'), Q(isresource=True))  
+`SELECT * FROM graphs WHERE (name LIKE 'Actor%' AND isresource = True)`
+
+---
+
+## Raw SQL
+
+```python
+from django.db import connection
+
+with connection.cursor() as cursor:
+    cursor.execute('SELECT * FROM graphs WHERE (name LIKE 'Actor%' AND isresource = True)')
+```
+
+---
+
+## Shell
+
+```bash
+python manage.py shell
+```
+
+```python
+from arches.app.models import models
+resource_models = models.GraphModel.objects.filter(isresource=True)
+actors = models.ResourceInstance.objects.filter(graph__name='')
+```
+
+---
+
 ## Migrations
 
 As your app is developed, models will change. For example you might:
@@ -89,7 +146,7 @@ As your app is developed, models will change. For example you might:
 - Remove a field
 - Add a constraint
 - Rename a field
-- etc
+- Data migrations
 
 You can update your database with these changes
 by running migrations:
@@ -102,7 +159,6 @@ python manage.py makemigrations
 ```bash
 python manage.py migrate
 ```  
-
 ---
 
 ## Views (`views.py`)
@@ -128,7 +184,6 @@ class ResourceData(View):
         datatypes = models.DDataType.objects.all()
         return JSONResponse(datatypes)
 ```
-
 ---
 
 ## Routing (`urls.py`)
@@ -158,7 +213,7 @@ An example template:
 ```html
 <ul>
 {% for datatype in datatypes %}
-    <li>{{datatype.name}}</li>
+    <li>{{datatype.datatype}}</li>
 {% endfor %}
 </ul>
 ```
@@ -171,6 +226,7 @@ The above template might render something like this:
     <li>number</li>
 </ul>
 ```
+
 ---
 
 ## Django Projects
@@ -184,8 +240,6 @@ arches/
         urls.py
         wsgi.py
 ```
-
-BTW, Arches is a Django Project
 
 ---
 
@@ -216,6 +270,8 @@ except ImportError:
 ```
 
 You can override settings in a local_settings.py file.  
+
+https://arches.readthedocs.io/en/stable/settings-beyond-the-ui/
 
 ---
 
@@ -264,7 +320,7 @@ http://localhost:8000/admin
 
 ---
 
-## Piecing it together
+## Genreal Steps for Creating a Django Application
 
 1. Create a project
 2. Modify your settings (particularly db settings)
@@ -273,3 +329,5 @@ http://localhost:8000/admin
 5. Register your app in settings
 6. Write your models -> migrate
 7. Write your templates, views, and urls (and tests)
+
+https://docs.djangoproject.com/en/1.11/intro/tutorial01/

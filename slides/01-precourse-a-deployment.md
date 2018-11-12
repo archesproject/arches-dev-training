@@ -14,7 +14,7 @@ research and exploration.
 #### Topics:
 -   Deployment Considerations
 -   Platform Options
--   High Usage optimization options
+-   High Usage Optimization Options
 -   Hosted Examples
 -   Takeaway
 
@@ -22,13 +22,16 @@ research and exploration.
 
 ## Deployment considerations:
 -   What are the organizational specific considerations?
-    -   Are there institutional hosting requirements? Is in-house hosting required? Are there sufficient in-house resources to manage an in-house solution? Is there existing in-house expertise in hosting?
+    -   Are there institutional hosting requirements?
+    -   Is in-house hosting required?
+    -   Are there sufficient in-house resources to manage an in-house solution?
+    -   Is there existing in-house expertise in hosting?
     -   Is there existing in-house experience with a specific cloud? AWS? Azure?
 -   How much usage is expected?
     -   How many people will be searching? editing? creating reports?
--   What Resource Models being used?
-    -   Is the data file heavy (Images, PDFs, etc)?
-    -   How deeply nested is the Resource Model?
+-   What resource models are being used?
+    -   Is the data file heavy (images, PDFs, etc)?
+    -   How deeply nested are your resource models?
 
 ---
 
@@ -68,15 +71,15 @@ All platforms require specific knowledge and experience to maintain.
 Each platform has both positives and negatives associated with them.
 
 -   Linux:
-    -   Most widely supported and used OS to host Arches
+    -   Most widely supported and likely the most used OS to host Arches
     -   All Arches dependancies have been tested and work as expected
 -   Docker:
     -   Obfuscates management commands in a container
-    -   Can be hosted on Container Platforms
+    -   Can be hosted on container platforms AWS Fargate, OpenShift, DigitalOcean, etc
 -   Windows:
     -   Least used OS to host Arches.
     -   Some features are not available, including generating Raster Tiles
-    -   Difficult to set up, must use IIS.
+    -   Difficult to set up, must use IIS (mod_wsgi bindings for Apache no longer available for Python 2.7)
 
 ---
 
@@ -118,8 +121,8 @@ Each Cloud Service has both positives and negatives associated with them.
     -   The web is moving towards encryption. Deploy with an SSL certificate! See [Let's Encrypt](https://letsencrypt.org/).
 -   Projects/Packages:
     -   Arches supports the loading of Packages into Projects. Host the Package in a git repo and use the [`load_package`](https://arches.readthedocs.io/en/stable/command-line-reference/#loading-a-package-into-a-project) command.
--   Back up. Back up. Back up.
--   Ensure PostgreSQL is properly setup and tuned with sufficient security settings.
+-   Back up. You can script this process, but RDS makes it pretty easy.
+-   Ensure PostgreSQL is properly setup and tuned with sufficient security settings (such as which ip addresses are allowed to connect)
 -   Ensure [sending of emails](https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/#email-backend-and-related-settings) has been configured correctly
 -   Set up monitoring. On AWS, See [Cloudwatch](https://aws.amazon.com/cloudwatch/)
 
@@ -128,7 +131,7 @@ Each Cloud Service has both positives and negatives associated with them.
 ## Optimization for Deployment
 
 -   PostgreSQL
-    -   Setup Logging, Autovacuuming, tweak `work_mem`. Consider running a Hosted PostgreSQL setup to avoid too much tweaking.
+    -   Setup Logging, Auto-vacuuming, tweak `work_mem`. Consider running a hosted PostgreSQL setup to avoid too much tweaking.
 -   Set up and tune [django caching](https://docs.djangoproject.com/en/1.11/topics/cache/) through testing.
 
 ---
