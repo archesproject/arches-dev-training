@@ -3,7 +3,7 @@ self.__precacheManifest = [
     "url": "vendor.3.0b4529397504393b1351.css"
   },
   {
-    "url": "main.0.18ad4c5beace3a375279.css"
+    "url": "main.0.81580cf83ea589a24738.css"
   },
   {
     "url": "presenter.view.1.bf872c5162aaaf19281e.bundle.js"
@@ -24,10 +24,10 @@ self.__precacheManifest = [
     "url": "vendors~Sidebar.4.a2c260d84c17b4159f57.bundle.js"
   },
   {
-    "url": "main.0.18ad4c5beace3a375279.bundle.js"
+    "url": "main.0.81580cf83ea589a24738.bundle.js"
   },
   {
-    "revision": "76567586b3a8a2b80c948e705631d43c",
+    "revision": "d3d77795046936be2b0dd924cc030014",
     "url": "index.html"
   },
   {
