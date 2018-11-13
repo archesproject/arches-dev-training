@@ -122,7 +122,7 @@ Contents corresponds to what is loaded in Postgres.
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget](/images/widget-db-screenshot.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/1877663/48397423-8070b680-e715-11e8-945b-aa4ba56d7934.png" alt="widget-db-screenshot" scale="0">
 
 ---
 
