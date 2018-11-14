@@ -105,7 +105,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ## The widget manager - config_form
 
-![widget manager](/images/widget-manager-config-form.png)
+<img alt="widget-manager-config-form" src="https://user-images.githubusercontent.com/1877663/48462214-3cda8300-e7cf-11e8-845b-0ff4bed781a1.png">
 
 ---
 
@@ -139,7 +139,7 @@ define(['knockout', 'underscore', 'viewmodels/widget'], function (ko, _, WidgetV
 
 ## The widget manager - form
 
-![widget manager](/images/widget-manager-form.png)
+<img alt="widget-manager-form" src="https://user-images.githubusercontent.com/1877663/48462225-44019100-e7cf-11e8-82fb-87007ba2ae44.png">
 
 ---
 
