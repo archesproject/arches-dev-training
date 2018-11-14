@@ -83,7 +83,7 @@ class DDataType(models.Model):
         db_table = 'd_data_types'
 ```
 
-![Datatype Table](/images/datatype-table.png)
+<img src="https://user-images.githubusercontent.com/1877663/48397423-8070b680-e715-11e8-945b-aa4ba56d7934.png" alt="alternative text" scale="0">
 
 ---
 
