@@ -124,6 +124,7 @@ Contents corresponds to what is loaded in Postgres.
 
 <div style='padding-left:50px; padding-top: 10px'>
 <img src="https://user-images.githubusercontent.com/1877663/48462198-2f24fd80-e7cf-11e8-9b03-9674f1d710e1.png" alt="widget-db-screenshot" scale="0">
+</div>
 
 ---
 
