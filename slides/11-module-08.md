@@ -15,12 +15,20 @@
 
 ---
 
+## In a Nutshell
+
+- Projects define appearance
+- Packages define data and extended functionality   
+
+---
+
 ## Projects
 
-- Projects facilitate all of the customizations that you will need to make one installation of Arches different from the next
-- You can update html, styles, and images to modify web page appearance
+- A project sits outside of your virtual environment, making it editable and portable
+- Only makes available those files that you can safely modify
+- In a project you can update html, styles, and images to modify your application's appearance
 - The templates directory holds HTML templates that you can override to customize your application
-- A project sits outside of your virtual environment, and can thus be transferred to any other system where Arches is installed
+- Projects are not generally hosted on GitHub (but they can be)
 
 ---
 
@@ -79,17 +87,17 @@ Example Project
     - resource models/branches
     - datatypes/functions/widgets
     - map layers
+    - resource views
 
-- The whole package can be loaded from local file system or from github
+- The whole package can be loaded from local file system or from GitHub
 - Packages contain specific settings (e.g. business data load order and date format)
-- A local package may be updated if you make changes to your Arches instance
 
 ---
 
-## Creating a Package
+## Creating an Empty Package
 
 ```bash
-python manage.py packages -o create_package -d /Full/path/to/mypackage
+python manage.py packages -o create_package -d destination/path/to/mypackage
 ```
 
 ---
@@ -123,31 +131,52 @@ Example Package
   └── system_settings
 ```
 
+https://arches.readthedocs.io/en/stable/projects-and-packages/#creating-a-new-package
+
 ---
 
 ## Package Config vs Package Settings
 
 - Package Settings
-    - The django settings relevant to your package not managed in system settings
-    - used to apply default settings for your package to projects that use it
-    - This file is copied into your project when the package is loaded.
+    - Used to apply default settings for your package to projects that use it
+    - Examples:
+        - DATE_IMPORT_EXPORT_FORMAT
+        - ANALYSIS_COORDINATE_SYSTEM_SRID
+
 - Package Config
-    - This file allows you to configure other parts of the data loading process.
-    - For example, the order in which the business data files are loaded
+    - Defines the order in which the business data files are loaded
+    - Specifies which resources can be related
 
 ---
 
-## Package command examples
+## Loading a Package
 
-- update a local package:
+
+from a local directory:
 ```bash
-python manage.py packages -o update_package -d /Full/path/to/mypackage
+python manage.py packages -o load_package -s source/path/of/mypackage -y -db true
 ```
-- load a package from GitHub:
-```bash
-python manage.py packages -o load_package -s https://github.com/package/archive/branch.zip
-```
-- override your database when loading a package by adding `-db true` (careful!):
+
+from GitHub (zip)
 ```bash
 python manage.py packages -o load_package -s https://github.com/package/archive/branch.zip -db true
 ```
+
+---
+
+## Making Changes
+
+1. Fork the remote repo, clone it, load it locally
+2. Load it and edit the downloaded files:
+
+```
+_pkg_181111_230640
+    |-- mypackage
+        |--business_data
+        |--extensions
+        ...
+    |-- source_data.zip
+```
+
+Downloaded package name format:
+`_pkg_[YYMMDD_HHMMSS]`
